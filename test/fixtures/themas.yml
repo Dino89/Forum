@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  RaumID: 1
+  Title: MyString
+  Bild: MyString
+  Beschreibung: MyText
+  Author: 1
+
+two:
+  RaumID: 1
+  Title: MyString
+  Bild: MyString
+  Beschreibung: MyText
+  Author: 1

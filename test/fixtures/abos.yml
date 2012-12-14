@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  User: 1
+  Thema: 1
+
+two:
+  User: 1
+  Thema: 1

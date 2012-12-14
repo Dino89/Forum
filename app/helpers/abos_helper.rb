@@ -1,0 +1,2 @@
+module AbosHelper
+end

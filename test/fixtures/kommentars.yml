@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  ThemenID: 1
+  Author: 1
+  Text: MyText
+  Title: MyString
+  ProContraNeutral: MyString
+
+two:
+  ThemenID: 1
+  Author: 1
+  Text: MyText
+  Title: MyString
+  ProContraNeutral: MyString

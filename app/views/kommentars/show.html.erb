@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Themenid:</b>
+  <%= @kommentar.ThemenID %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @kommentar.Author %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @kommentar.Text %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @kommentar.Title %>
+</p>
+
+<p>
+  <b>Procontraneutral:</b>
+  <%= @kommentar.ProContraNeutral %>
+</p>
+
+
+<%= link_to 'Edit', edit_kommentar_path(@kommentar) %> |
+<%= link_to 'Back', kommentars_path %>
