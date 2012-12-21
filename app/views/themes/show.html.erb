@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @theme.id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @theme.title %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%= @theme.picture %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @theme.description %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @theme.user_id %>
+</p>
+
+<p>
+  <b>Room:</b>
+  <%= @theme.room_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_theme_path(@theme) %> |
+<%= link_to 'Back', themes_path %>
