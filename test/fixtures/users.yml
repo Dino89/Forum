@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  id: 
+  id: 1
   name: MyString
   firstname: MyString
   nickname: MyString
   email: MyString
   password: MyString
-  right: 
+  right: 1
   location: MyString
-  gender: 
+  gender: 1
 
 two:
-  id: 
+  id: 1
   name: MyString
   firstname: MyString
   nickname: MyString
   email: MyString
   password: MyString
-  right: 
+  right: 1
   location: MyString
-  gender: 
+  gender: 1

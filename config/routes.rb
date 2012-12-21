@@ -1,4 +1,14 @@
 Forum::Application.routes.draw do
+  resources :validations
+
+  resources :comments
+
+  resources :subscriptions
+
+  resources :rooms
+
+  resources :themes
+
   resources :users
 
   # The priority is based upon order of creation:
