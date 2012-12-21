@@ -1,5 +1,5 @@
 Forum::Application.routes.draw do
-  resources :validations
+  resources :ratings
 
   resources :comments
 
