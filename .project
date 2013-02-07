@@ -5,7 +5,6 @@
 	<projects>
 	</projects>
 	<buildSpec>
-<<<<<<< HEAD
 	</buildSpec>
 	<natures>
 		<nature>org.radrails.rails.core.railsnature</nature>
