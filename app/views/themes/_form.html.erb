@@ -10,11 +10,6 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :id %><br />
-    <%= f.number_field :id %>
-  </div>
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
@@ -31,11 +26,9 @@
     <%= f.label :user_id %><br />
     <%= f.number_field :user_id %>
   </div>
-  <div class="field">
-    <%= f.label :room_id %><br />
-    <%= f.number_field :room_id %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
+  
+  <input type="hidden" value="<%= Room.find(params[:room]).id %>" name="theme[room_id]" type="number">
 <% end %>
