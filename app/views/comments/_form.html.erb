@@ -31,8 +31,9 @@
        ["pro", "contra", "neutral"] %>
   </div>
   <div class="field">
+  	
     <%= f.label :theme_id %><br />
-    <%= f.number_field :theme_id %>
+    <%= f.number_field :theme_id%>
   </div>
   <div class="field">
     <%= f.label :user_id %><br />
@@ -41,4 +42,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  <%= @theme = Theme.find(params[:theme]) %>
 <% end %>
