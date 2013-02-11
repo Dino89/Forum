@@ -30,6 +30,10 @@
   <%= @theme.room_id %>
 </p>
 
+<%= render partial: "comments/comment", collection: @theme.comments %>
+
+
+
 
 <%= link_to 'Edit', edit_theme_path(@theme) %> |
 <%= link_to 'Back', themes_path %>

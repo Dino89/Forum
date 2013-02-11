@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121221205057) do
+ActiveRecord::Schema.define(:version => 20130211171025) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
     t.string   "title"
-    t.integer  "procontra"
+    t.string   "procontra"
     t.integer  "theme_id"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(:version => 20121221205057) do
     t.string   "email"
     t.string   "password"
     t.string   "location"
-    t.integer  "gender"
+    t.string   "gender"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.boolean  "admin"
