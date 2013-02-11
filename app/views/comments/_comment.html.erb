@@ -2,15 +2,15 @@
 	<div><%= comment.created_at.strftime("%d.%m.%Y %H:%M")%> </div>
 	
 	
-
-	<div><%  %></div>
-	
-	
-	
+	<div>
+		<div><%= comment.user.nickname  %></div>
+		<div><%= comment.user.location  %></div>
+		<div><%= comment.user.gender  %></div>
+	</div>
 <%= comment.procontra%> <br>
 <% if comment.procontra == 'pro'%>
 <%= comment.text%> <br>
 <% end %>
 
 </div>
-<br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br />

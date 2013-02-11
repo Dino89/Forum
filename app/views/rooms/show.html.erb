@@ -10,6 +10,7 @@
   <%= @room.title %>
 </p>
 
-
+<%= render partial: "themes/theme", collection: @room.themes %>
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
+<%= link_to 'Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
