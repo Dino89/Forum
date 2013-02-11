@@ -40,8 +40,9 @@
     <%= f.text_field :location %>
   </div>
   <div class="field">
-    <%= f.label :gender %><br />
+    <%= f.label_radio_tag(:gender,'Geschlecht') %><br />
     <%= f.number_field :gender %>
+    
   </div>
   <div class="field">
     <%= f.label :admin%><br />
