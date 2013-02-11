@@ -12,20 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.number_field :id %>
+    <%#= f.label :id %><br />
+    <%#= f.number_field :id %>
   </div>
   <div class="field">
-    <%= f.label :text %><br />
+    <%= f.label 'Inhalt' %><br />
     <%= f.text_area :text %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label 'Titel' %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :procontra %><br />
-    <%= f.number_field :procontra %>
+  	<%= f.label 'Wertung:' %><br />
+    <%= f.label 'pro / contra / neutral' %><br />
+    <%#= f.number_field :procontra %>
+    <%= f.select :procontra,
+       ["pro", "contra", "neutral"] %>
   </div>
   <div class="field">
     <%= f.label :theme_id %><br />
