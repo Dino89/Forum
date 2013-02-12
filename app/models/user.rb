@@ -1,13 +1,11 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :firstname, :gender, :id, :location, :name, :nickname, :password, :admin
-  has_many :comments
-  has_many :subscriptions, :dependent => :destroy
-  has_many :themes
-  has_many :ratings
-  
-  validates :nickname, :email, :password, presence: false
-  validates :nickname, :email, uniqueness: true
-  validates_length_of :password, :minimum => 5, :message => 'Passwort >= 5 Zeichen'
-  #validates :nickname, length: {minimum: 3}
-  
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  # attr_accessible :title, :body
 end
