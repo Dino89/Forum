@@ -25,13 +25,16 @@
     <%= f.select :procontra,
        ["pro", "contra", "neutral"] %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.number_field :user_id %>
-  </div>
+
+  <% if current_user %>
+    <input type="hidden" value="<%= current_user.id %>" name="comment[user_id]" type="number">
+  <% end %>
+  
   <div class="actions">
     <%= f.submit %>
   </div>
+
+  
   
   <input type="hidden" value="<%= Theme.find(params[:theme]).id %>" name="comment[theme_id]" type="number">
 <% end %>
