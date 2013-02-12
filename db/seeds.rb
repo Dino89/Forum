@@ -7,12 +7,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-  users = User.create([{:name => "Gomez", :firstname => "Mario", :nickname => "SuperMario", :email => "gomez@fcb.de", :password => "123456", :admin => false, :location => "München", :gender => 'männlich'},
-    {:name => "Kroos", :firstname => "Toni", :nickname => "Toni10", :email => "kroos@fcb.de", :password => "123456", :admin => false, :location => "München", :gender => "männlich"},
-    {:name => "Janssen", :firstname => "Daniel", :nickname => "DJ", :email => "dj@ppp.de", :password => "123456", :admin => true, :location => "Münster", :gender => "männlich"},
-    {:name => "Dicke", :firstname => "Christopher", :nickname => "Krimi", :email => "krimi@pp.de", :password => "123456", :admin => false, :location => "Münster", :gender => "männlich"},
-    {:name => "Mueller", :firstname => "Christopher", :nickname => "Dino", :email => "Dino@pp.de", :password => "123456", :admin => false, :location => "Münster", :gender => "männlich"},
-    {:name => "Meyer", :firstname => "Heinz", :nickname => "DerDicke", :email => "heinz@ppp.de", :password => "123456", :admin => false, :location => "Berlin", :gender => "männlich"}])
+  users = User.create([{:name => "Gomez", :firstname => "Mario", :nickname => "SuperMario", :email => "gomez@fcb.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "München", :gender => 'männlich'},
+    {:name => "Kroos", :firstname => "Toni", :nickname => "Toni10", :email => "kroos@fcb.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "München", :gender => "männlich"},
+    {:name => "Janssen", :firstname => "Daniel", :nickname => "DJ", :email => "dj@ppp.de", :password => "12345678", :password_confirmation => "12345678", :admin => true, :location => "Münster", :gender => "männlich"},
+    {:name => "Dicke", :firstname => "Christopher", :nickname => "Krimi", :email => "krimi@pp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Münster", :gender => "männlich"},
+    {:name => "Mueller", :firstname => "Christopher", :nickname => "Dino", :email => "Dino@pp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Münster", :gender => "männlich"},
+    {:name => "Meyer", :firstname => "Heinz", :nickname => "DerDicke", :email => "heinz@ppp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Berlin", :gender => "männlich"}])
   
   comments = Comment.create([{:text => "Das ist echt super!", :title => "Da gibt's Lob für", :procontra => "pro", :user_id => "3", :theme_id => "1"},
     {:text => "Das ist gar nicht super!", :title => "Kacke", :procontra => "contra", :user_id => "4", :theme_id => "0"},
