@@ -1,4 +1,6 @@
 Forum::Application.routes.draw do
+  devise_for :users
+
   resources :ratings
 
   resources :comments
@@ -8,8 +10,6 @@ Forum::Application.routes.draw do
   resources :rooms
 
   resources :themes
-
-  resources :users
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
