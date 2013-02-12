@@ -14,6 +14,10 @@
     {:name => "Mueller", :firstname => "Christopher", :nickname => "Dino", :email => "Dino@pp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Münster", :gender => "männlich"},
     {:name => "Meyer", :firstname => "Heinz", :nickname => "DerDicke", :email => "heinz@ppp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Berlin", :gender => "männlich"}])
   
+  admin = User.create(:name => "Admin", :firstname => "", :nickname => "Admin", :email => "admin@forum.de", :password => "12345678", :password_confirmation => "12345678", :admin => true, :location => "Münster", :gender => 'männlich')
+  admin.add_role :admin
+  
+  
   comments = Comment.create([{:text => "Das ist echt super!", :title => "Da gibt's Lob für", :procontra => "pro", :user_id => "3", :theme_id => "1"},
     {:text => "Das ist gar nicht super!", :title => "Kacke", :procontra => "contra", :user_id => "4", :theme_id => "0"},
     {:text => "Ein guter Anfang, jedoch gibt es noch Verbesserungspotential", :title => "Naja", :procontra => "neutral", :user_id => "5", :theme_id => "1"},
