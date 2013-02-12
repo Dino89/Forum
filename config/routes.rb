@@ -1,4 +1,8 @@
 Forum::Application.routes.draw do
+  get "start_page/index"
+
+  get "start_page/show"
+
   devise_for :users
 
   resources :ratings
@@ -10,7 +14,12 @@ Forum::Application.routes.draw do
   resources :rooms
 
   resources :themes
+  
+  resources :start_page
+  
+  root :to => "start_page#index", :as => 'index'
 
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
