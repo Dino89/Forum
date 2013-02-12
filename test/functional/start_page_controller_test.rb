@@ -6,12 +6,9 @@ class StartPageControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-<<<<<<< HEAD
-=======
   test "should get show" do
     get :show
     assert_response :success
   end
 
->>>>>>> 3c7ae1cbe2384a1418b1813aaa0e4bee7bf94cb6
 end

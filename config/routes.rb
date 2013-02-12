@@ -1,11 +1,8 @@
 Forum::Application.routes.draw do
   get "start_page/index"
-
-<<<<<<< HEAD
-=======
+  
   get "start_page/show"
 
->>>>>>> 3c7ae1cbe2384a1418b1813aaa0e4bee7bf94cb6
   devise_for :users
 
   resources :ratings
@@ -22,13 +19,6 @@ Forum::Application.routes.draw do
   
   root :to => "start_page#index", :as => 'index'
 
-<<<<<<< HEAD
-  resources :start_page
-  
-  root :to => "start_page#index", :as => 'index'
-=======
-  
->>>>>>> 3c7ae1cbe2384a1418b1813aaa0e4bee7bf94cb6
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
