@@ -1,30 +1,26 @@
 <h1>Listing rooms</h1>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @rooms.each do |room| %>
-  <tr>
-    <td><%= room.id %></td>
-    <td><%= room.title %></td>
-    <td><%= link_to 'anzeigen', room %></td>
-    
-    <td><% if can? :edit, @room %>
-    	<%= link_to 'editieren', edit_room_path(room) %></td>
-    	<% end %>
-    	
-    <td><% if can? :delete, @room %>
-        <%= link_to 'löschen', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-  </tr>
-<% end %>
-</table>
+<div id="content">
+        <div id="catlist">
+            <ul>
+			   <% @rooms.each do |room| %>
+					<li> 
+   	               		<%= link_to room.title, room %>
+   	               
+   	               		<% if can? :edit, @room %>
+    						<%= link_to 'editieren', edit_room_path(room) %>
+    			  		<% end %>
+    			   
+    			  		<% if can? :delete, @room %>
+       				    	<%= link_to 'löschen', room, method: :delete, data: { confirm: 'Are you sure?' } %>
+        		   		<% end %>
+			   		</li>
+				<% end %>
+            </ul>
+        </div>
+</div>
+
 
 <br />
 
