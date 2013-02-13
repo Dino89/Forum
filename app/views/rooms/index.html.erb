@@ -13,13 +13,22 @@
   <tr>
     <td><%= room.id %></td>
     <td><%= room.title %></td>
-    <td><%= link_to 'Show', room %></td>
-    <td><%= link_to 'Edit', edit_room_path(room) %></td>
-    <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'anzeigen', room %></td>
+    
+    <td><% if can? :edit, @room %>
+    	<%= link_to 'editieren', edit_room_path(room) %></td>
+    	<% end %>
+    	
+    <td><% if can? :delete, @room %>
+        <%= link_to 'löschen', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Room', new_room_path %>
+<% if can? :create, @room %>
+  <%= link_to "Neuen Raum erstellen", new_room_path(@room) %>
+<% end %>
+
