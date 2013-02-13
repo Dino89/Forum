@@ -17,8 +17,8 @@ class User < ActiveRecord::Base
   has_many :themes
   has_many :ratings
   
-  validates :nickname, :email, :password, presence: false
+  validates :nickname, :email, presence: false #:password
   validates :nickname, :email, uniqueness: true
-  validates_length_of :password, :minimum => 5, :message => 'Passwort >= 5 Zeichen'
+  validates_length_of :password, :minimum => 8, :message => 'Passwort >= 5 Zeichen'
   
 end

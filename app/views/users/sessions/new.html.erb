@@ -1,3 +1,4 @@
+<div id="content">
 <h2>Login</h2>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
@@ -8,11 +9,14 @@
   <%= f.password_field :password %></div>
 
   <% if devise_mapping.rememberable? -%>
-    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+    <div><%= f.check_box :remember_me %> angemeldet bleiben</div>
   <% end -%>
 
-  <div><%= f.submit "Sign in" %></div>
+  <div><%= f.submit "anmelden" %></div>
 <% end %>
+</br>
+</br>
+<%= link_to "--> Passwort vergessen?", new_password_path(resource_name) %><br />
 
+</div>>
 
-<%= render "devise/shared/links" %>

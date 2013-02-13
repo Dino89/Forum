@@ -21,9 +21,15 @@
 
 					  	<li> Eingelogt als: <%= current_user.email%> </li> 
 					  	<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete%></li>
+					  	<li><%= link_to 'Benutzerkonto', edit_user_registration_path %></li>
+					  	
+							  	<% if current_user.admin == true  %>
+							  		<li><%= link_to 'Benutzer bearbeiten', edit_user_registration_path %></li>
+							  	<% end %>
 					  	<% else %>
 					  	<li><%= link_to 'Login', new_user_session_path %></li>
 					  	<li><%= link_to 'Registieren', new_user_registration_path %></li>
+
 					  <% end %>
 				   </ul>
                 </nav>

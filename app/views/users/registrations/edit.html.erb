@@ -1,29 +1,52 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div id="content">
+	<% @tmp_user = User.find_by_id(current_user.id) %>
+	
+	
+<h2>Benutzerkonto von <%= @tmp_user.nickname %> </h2>
+</br>
+<p><b> Hier können Sie Änderungen an Ihren Persönlichen Einstellungen vornehmen:</b> </p>
+	
+
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div> <b>Nickname:</b> </br>
+  	<%= f.text_field :nickname  %></div>
+  <div> <b>Name:</b> </br>
+  	<%= f.text_field :name  %></div>
+  <div> <b>Vorname:</b> </br>
+  	<%= f.text_field :firstname  %></div>
+  <div> <b>Wohnort:</b> </br>
+  	<%= f.text_field :location  %></div>
+  <div> <b>Geschlecht:</b> 
+  	<%= f.select :gender, options_for_select([["männlich", "m"], ["weiblich", "w"]]) %></div>
+  
+  <div> <b>Email:</b> </br>
+  	<%= f.email_field :email%></div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <div><b>Neues Passwort:</b><i>(Leer lassen, sollten Sie Ihr Passwort nicht ändern wollen)</i> <br />
   <%= f.password_field :password, :autocomplete => "off" %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><b>Neues Passwort bestätigen:</b><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <div><b>Ihr Passwort:</b><i>(Wir benötigen Ihr Passwort um Änderungen zu übernehmen)</i><br />
   <%= f.password_field :current_password %></div>
 
-  <div><%= f.submit "Update" %></div>
+  <div><%= f.submit "Änderungen speichern" %></div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3>Löschen des Benutzerkontos</h3>
+<p> Es werden alle Ihre Daten gelöscht!</br> </p>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+<p><%= button_to "Account löschen :( ", registration_path(resource_name), :data => { :confirm => "Wollen Sie Ihren Account wirklich löschen?" }, :method => :delete %></p>
 
-<%= link_to "Back", :back %>
+
+
+
+</div>
