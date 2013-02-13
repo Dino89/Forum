@@ -1,24 +1,22 @@
 <h1>Listing rooms</h1>
 
-<table>
-  <tr>
-    <th>Id</th>
-    <th>Title</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="content">
+        <div id="catlist">
+            <ul>
+			   <% @rooms.each do |room| %>
 
-<% @rooms.each do |room| %>
-  <tr>
-    <td><%= room.id %></td>
-    <td><%= room.title %></td>
-    <td><%= link_to 'Show', room %></td>
-    <td><%= link_to 'Edit', edit_room_path(room) %></td>
-    <td><%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+
+
+				<li> <%= link_to room.title, room %> <%= link_to 'Edit', edit_room_path(room) %> <%= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                        
+
+
+					 <% end %>
+
+            </ul>
+        </div>
+</div>
+
 
 <br />
 

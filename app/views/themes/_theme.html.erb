@@ -1,3 +1,17 @@
 
-<div><%= link_to theme.title, theme_path(theme)%></div>
+<div class="themepreview">
+	<div>
+	<%= link_to theme.title, theme_path(theme)%>
+	</div>
+	<div class="themepreview-imageanddescription">
+		<div class="theme-thumb-div">
+	<%= image_tag theme.picture, :class => "theme-thumb"%>
+		</div>
+		<div class="themepreview-description">
+	<%= theme.description%>
+	    </div>
+	</div>
+	
+	
+</div>
 
