@@ -1,3 +1,25 @@
+<style type="text/css" ">
+	p.cssbutton
+	{
+	color:black;
+	font-weight:normal;
+	padding:10px;
+	width:90px;
+	height:22px;
+	border:solid 0.5px #b8babc;
+	border-radius:10px;
+	box-shadow:1px 1px 1px 1px #666;
+	background:#ccddea;
+	background:-moz-linear-gradient(left top,#ccddea,#bbd2e3);
+	background:-webkit-linear-gradient(left top,#ccddea,#bbd2e3);
+	background:-o-linear-gradient(left top,#ccddea,#bbd2e3);
+	background:-ms-linear-gradient(left top,#ccddea,#bbd2e3);
+	background:linear-gradient(left top,#ccddea,#bbd2e3);
+	}
+	
+</style>
+
+
 <div>
 	<div><%= comment.created_at.strftime("%d.%m.%Y %H:%M")%> </div>
 	
@@ -13,7 +35,11 @@
 <% end %>
 
 
-<%=link_to 'Like', like_comment_path(comment) %>
+
+
+
+
+<p class="cssbutton"> <%= toggle_like_button(comment, current_user) %> </p>
 
 </div>
 <br /><br />
