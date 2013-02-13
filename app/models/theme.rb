@@ -4,4 +4,7 @@ class Theme < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   has_one :user
   belongs_to :room
+  
+  validates_presence_of :description, :id, :room_id, :title, :user_id
+  validates :description, :title, :uniqueness => true
 end

@@ -36,8 +36,10 @@ class Ability
        can :manage, :all
       else
         #user
+        can :create, Theme
+        can :create, Comment
        can :read, :all
-       can :create, [Theme, Comment]
+       
       end
     else 
       # everbody can see everything

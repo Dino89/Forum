@@ -10,10 +10,9 @@
 <%= render partial: "themes/theme", collection: @room.themes %>
 
  <div id="createnewthemebutton">
- 	<% if can? :create, @room %>
- 		 <%= link_to "Neues Thema erstellen", new_theme_path(:room => @room.id) %>
+ 	<% if can? :create, @theme %>
+ 		 <%= link_to 'Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
 	<% end %>
- 	<%= link_to 'Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
  </div>
 
 </div>

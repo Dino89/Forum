@@ -34,13 +34,11 @@
 <%= comment.text%> <br>
 <% end %>
 
-
-
-
-
-
-<p class="cssbutton"> <%= toggle_like_button(comment, current_user) %> </p>
+<% if current_user.present? %>
+	<% if current_user.has_role? :admin or current_user.has_role? :user %>
+		<p class="cssbutton"> <%= toggle_like_button(comment, current_user) %> </p>
+	<% end %>
+<% end %>
 
 </div>
 <br /><br />
-

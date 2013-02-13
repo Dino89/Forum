@@ -7,13 +7,15 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-  users = User.create([{:name => "Gomez", :firstname => "Mario", :nickname => "SuperMario", :email => "gomez@fcb.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "München", :gender => 'männlich'},
+  @users = User.create([{:name => "Gomez", :firstname => "Mario", :nickname => "SuperMario", :email => "gomez@fcb.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "München", :gender => 'männlich'},
     {:name => "Kroos", :firstname => "Toni", :nickname => "Toni10", :email => "kroos@fcb.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "München", :gender => "männlich"},
     {:name => "Janssen", :firstname => "Daniel", :nickname => "DJ", :email => "dj@ppp.de", :password => "12345678", :password_confirmation => "12345678", :admin => true, :location => "Münster", :gender => "männlich"},
     {:name => "Dicke", :firstname => "Christopher", :nickname => "Krimi", :email => "krimi@pp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Münster", :gender => "männlich"},
     {:name => "Mueller", :firstname => "Christopher", :nickname => "Dino", :email => "Dino@pp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Münster", :gender => "männlich"},
     {:name => "Meyer", :firstname => "Heinz", :nickname => "DerDicke", :email => "heinz@ppp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Berlin", :gender => "männlich"}])
-  
+  @users.each do |u|
+    u.add_role :user
+  end
   
   admin = User.create(:name => "Admin", :firstname => "", :nickname => "Admin", :email => "admin@forum.de", :password => "12345678", :password_confirmation => "12345678", :admin => true, :location => "Münster", :gender => 'männlich')
   admin.add_role :admin
@@ -25,7 +27,17 @@
     {:text => "Da bin ich ganz sicher. Sie sind topmotiviert und haben starke Leute auf der Bank.", :title => "Bayern wird Meister", :procontra => "pro", :user_id => "3", :theme_id => "4"},
     {:text => "BVB wird wieder die Schale holen.", :title => "So ein Bloedsinn", :procontra => "contra", :user_id => "4", :theme_id => "4"},
     {:text => "Wir sind dieses Jahr dran! Jawohl! Ein Leben lang Schalke!", :title => "Schalke wird's!", :procontra => "contra", :user_id => "3", :theme_id => "4"},
-    {:text => "Schalke ist keine Konkurrenz fuer Bayern. Warum habe die überhaupt Stevens entlassen???", :title => "Schalke? Niemals", :procontra => "neutral", :user_id => "3", :theme_id => "4"}])
+    {:text => "Schalke ist keine Konkurrenz fuer Bayern. Warum habe die überhaupt Stevens entlassen???", :title => "Schalke? Niemals", :procontra => "neutral", :user_id => "3", :theme_id => "4"},
+    {:text => "Der hat eh schon genug Kohle", :title => "Niemals", :procontra => "contra", :user_id => "3", :theme_id => "3"},
+    {:text => "Besser als die Merkel! Was würde die sagen?! Alternativlos :-D", :title => "Wen sonst", :procontra => "pro", :user_id => "2", :theme_id => "3"},
+    {:text => "Mir ist es total egal, wer Kanzler wird. Die machen eh, was die wollen.", :title => "Wen kümmert's?", :procontra => "contra", :user_id => "4", :theme_id => "0"},
+    {:text => "Ihr Zecken? Niemals!", :title => "Haha", :procontra => "contra", :user_id => "4", :theme_id => "5"},
+    {:text => "Ihr habt ja schon seit Jahrzehnten noch nicht mal die Meisterschaft geholt, also würd ich mal ganz ruhig sein!", :title => "Schalke hat eh nix zu melden", :procontra => "neutral", :user_id => "3", :theme_id => "5"},
+    {:text => "Ist sofort gekauft! Wie geil ist das denn?!", :title => "JAAAAAAAA", :procontra => "pro", :user_id => "1", :theme_id => "6"},
+    {:text => "Ich hab schon das Galaxy Nexus und es einfach genial!", :title => "Nexus 4ever", :procontra => "pro", :user_id => "2", :theme_id => "5"},
+    {:text => "Aber scheint ein sehr gutes Angebot zu sein.", :title => "Ich hab schon das S3.", :procontra => "neutral", :user_id => "3", :theme_id => "5"},
+    {:text => "Wenn interessiert denn Android?! Das Nexus kann gegen das iPohne einpacken.", :title => "Ich lieb mein iPhone", :procontra => "contra", :user_id => "4", :theme_id => "5"}
+    ])
     
    u = User.find_by_id(1).flag(Comment.find_by_id(4), :like)
     
@@ -68,14 +80,21 @@
      :description => "Was meint ihr wird Bayern dieses Mal Meister ?",
      :user_id => "1",
      :room_id => "4"},
+     
+     {:title => "Dafür gewinnt Dortmund die Champions League!",
+     :picture => "http://img.fotocommunity.com/images/Ballsport/Fussball/BVB-09-Deutscher-Meister-2011-a24542779.jpg",
+     :description => "Nur der BVB!!! Oh Borussia...",
+     :user_id => "4",
+     :room_id => "4"},
     
     {:title => "Nexus 4 - Das Preisleistungspferd ?",
      :picture => "https://lh6.ggpht.com/TWF21RygkFpkU-vKhdAxub1mF6L9xxoqc7aD1F6tD8ElCQFES4Ljn3yuUqcM1iZxC5A=w346",
      :description => "Google hat ein eigenes Smartphone rausgebracht für nur 349 bzw 300 Euro ist es hinsichtlich verbaute Komponenten doch sehr guenstig erscheint was meint ihr ?",
      :user_id => "1",
-     :room_id => "2"}
+     :room_id => "2"}    
    ])
    
   subscriptions = Subscription.create([
-    {:user_id => 1, :theme_id => 4}
+    {:user_id => 1, :theme_id => 4},
+    {:user_id => 4, :theme_id => 4}
   ])
