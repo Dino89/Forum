@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  make_flagger
   rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
