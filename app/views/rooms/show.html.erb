@@ -1,16 +1,16 @@
 <p id="notice"><%= notice %></p>
+<div id=content style="width: 940px;">
 
-<p>
-  <b>Id:</b>
-  <%= @room.id %>
-</p>
 
-<p>
-  <b>Title:</b>
-  <%= @room.title %>
-</p>
+
+ 
+ <div id=roomheadline><h4> <%= @room.title %> </h4> </div>
+
 
 <%= render partial: "themes/theme", collection: @room.themes %>
-<%= link_to 'Edit', edit_room_path(@room) %> |
-<%= link_to 'Back', rooms_path %>
-<%= link_to 'Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
+
+ <div id="createnewthemebutton">
+ <%= link_to 'Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
+ </div>
+
+</div>

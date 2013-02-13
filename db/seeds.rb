@@ -14,6 +14,7 @@
     {:name => "Mueller", :firstname => "Christopher", :nickname => "Dino", :email => "Dino@pp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Münster", :gender => "männlich"},
     {:name => "Meyer", :firstname => "Heinz", :nickname => "DerDicke", :email => "heinz@ppp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Berlin", :gender => "männlich"}])
   
+  
   admin = User.create(:name => "Admin", :firstname => "", :nickname => "Admin", :email => "admin@forum.de", :password => "12345678", :password_confirmation => "12345678", :admin => true, :location => "Münster", :gender => 'männlich')
   admin.add_role :admin
   
@@ -26,16 +27,7 @@
     {:text => "Wir sind dieses Jahr dran! Jawohl! Ein Leben lang Schalke!", :title => "Schalke wird's!", :procontra => "contra", :user_id => "3", :theme_id => "4"},
     {:text => "Schalke ist keine Konkurrenz fuer Bayern. Warum habe die überhaupt Stevens entlassen???", :title => "Schalke? Niemals", :procontra => "neutral", :user_id => "3", :theme_id => "4"}])
     
-  ratings = Rating.create([{:comment_id => "4", :user_id => "1"},
-    {:comment_id => "4", :user_id => "2"},
-    {:comment_id => "1", :user_id => "1"},
-    {:comment_id => "7", :user_id => "1"},
-    {:comment_id => "7", :user_id => "2"},
-    {:comment_id => "7", :user_id => "4"},
-    {:comment_id => "7", :user_id => "5"},
-    {:comment_id => "3", :user_id => "1"},
-    {:comment_id => "1", :user_id => "4"},
-    {:comment_id => "5", :user_id => "3"}])
+   u = User.find_by_id(1).flag(Comment.find_by_id(4), :like)
     
   rooms = Room.create([
 

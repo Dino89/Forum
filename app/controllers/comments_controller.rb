@@ -79,4 +79,21 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def like
+    @comment = Comment.find(params[:id])
+    if current_user.flagged?(@comment, :like) 
+      current_user.unflag(@comment, :like)
+    else current_user.flag(@comment, :like)
+    end
+    
+    redirect_to(:back)
+  end
+  
+  def dislike
+    @comment = Comment.find(params[:id])
+    
+    current_user.unflag(@comment, :like)
+    redirect_to(:back)
+  end
 end

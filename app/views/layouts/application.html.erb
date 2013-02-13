@@ -7,14 +7,30 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_user  %>
+	
+	<div id="headerbox">
+            <header>
+                <div id="logo"> <%= link_to "blub.com", "/" %></div>
+                <nav>
+                    <ul>
+                       
+                        <li><%= link_to 'Räume', rooms_path%></li>
+                        <li>Möglicher Platzhalter</li>
+                        <li>.</li>
+                          <% if current_user  %>
 
-  	<p style="background-color: green">EINGELOGGT als: User_ID: <%= current_user.id%> ; EMAIL: <%= current_user.email%>  </p>
-  	<p> <%= link_to 'Logout', destroy_user_session_path, method: :delete%></p>
-  	<% else %>
-  	<%= link_to 'Login', new_user_session_path %>
-  	<%= link_to 'Neu anmelden', new_user_registration_path %>
-  <% end %>
+					  	<li> Eingelogt als: <%= current_user.email%> </li> 
+					  	<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete%></li>
+					  	<% else %>
+					  	<li><%= link_to 'Login', new_user_session_path %></li>
+					  	<li><%= link_to 'Registieren', new_user_registration_path %></li>
+					  <% end %>
+				   </ul>
+                </nav>
+                <input type="text" id="search" value=" Search...">
+            </header>
+        </div>
+
 </body>
 <%= yield %>
 

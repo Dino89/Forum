@@ -12,7 +12,9 @@
 <%= comment.text%> <br>
 <% end %>
 
-<input type="submit" value="like" id="<%= @ > ">
+
+<%=link_to 'Like', like_comment_path(comment) %>
+
 </div>
 <br /><br />
 

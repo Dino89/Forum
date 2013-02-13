@@ -1,0 +1,312 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+#logo{
+    font-size: 30pt;
+    
+}
+#logo a, header li,  header li a{
+    color: white !important;
+    font-family: helvetica;
+    float:left;
+    padding-right: 30px;
+    
+}
+a{
+	text-decoration: none;
+	color: black; 
+}
+a:visited { 
+	color: black; 
+	 }
+header ul{
+    padding: 0;
+    list-style: none;
+}
+#search{
+    background: #928c8c url(<%= asset_path 'lupe.png' %>) right no-repeat;
+    border-color: activeborder;
+    border-radius: 15px;
+    float: right;
+    margin-right: 15px;
+    color: #575555;
+    
+}
+#loginbox{
+    background-color: white;
+    font-size: 12pt;
+}
+#loginbox.ui-dialog-content.ui-widget-content{
+    
+}
+body{
+    background-image: url(pics/bg2.gif);
+    background-color: white;
+}
+
+#headerbox{
+    border-bottom: solid 1px azure;
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    left:0px;
+    top:0px;
+}
+
+#content{
+    position: absolute;
+    top:90px;
+}
+.discussion{
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    text-align: center;
+    position: relative;
+}
+.discussion-content{
+    alignment-adjust: middle;
+    width: 60%;
+    margin: 0px auto 0px;
+    position:relative;
+    background-color: #abb7b6;
+}
+.contra, .pro {
+    margin-top: 100px;
+    background-color: #b23333;
+    width:20%;
+    position: relative;
+    border: solid 1px;
+    border-radius: 5px;
+    z-index: 9;
+    text-align: left;
+}
+.contra{
+    float: left;
+    background-color: #b23333;
+    
+}
+.pro{
+    float: right;
+    background-color: #53af6b;
+
+}
+.neutral{
+	background-color:#CCCCCC;
+	border: solid 1px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 14px;
+    width:450px;
+}
+.pro ul{
+    list-style-image: url(pics/plus-small.png);
+}
+.contra ul{
+    
+    list-style-image: url(pics/minus-small.png);
+    
+}
+.pro li, .contra li{
+    margin-bottom: 10px;
+    
+    font-family: Geneva,Arial,Helvetica,sans-serif;
+    font-style: oblique;
+}
+.discussion-title{
+    
+    font-family:  Verdana;
+    color: #2456a5;
+    font-size: 24pt;
+     
+}
+.discussion-image{
+    max-width: 95%;
+    min-width: 70%;
+    max-height: 600px;
+    border: #d7e2f4 1px groove;
+    border-radius: 4px;
+    
+}
+
+
+
+
+
+#catlist{   
+    background-color: whitesmoke;
+    margin-top: 86px;
+    border: 1px solid black;
+    float: left;
+    padding-left: 5px;
+    margin-left: -15px;
+}
+#catlist li{
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 40px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: larger;
+    font-color: black !important;
+    background: linear-gradient(top,#f2f2f2,#e4e4e4) url(pics/arrow-small.png) right no-repeat;
+    margin: 0px;
+    
+    background:-moz-linear-gradient(top, #fff, #e4e4e4); /* Firefox */
+    background:-webkit-linear-gradient(top, #fff, #adf); /* Safari, Chrome */
+    background:-o-linear-gradient(top, #fff, #adf); /* Opera */
+    background:-ms-linear-gradient(top, #fff, #adf); /* IE */
+    background:linear-gradient(top, #fff, #adf); /* W3C Standard */
+}
+#catlist li:hover{
+    background: #CCCCCC url(pics/arrow-small.png) right no-repeat;
+}
+#catlist ul{
+    list-style: none;
+    padding: 3px;
+    margin: 0px;
+    
+    
+}
+.category{
+    
+    
+    margin-left: 40%;
+    
+    
+}
+.themelist{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}   
+.themelist li {
+   
+   
+    background:-moz-linear-gradient(top, #fff, #f2f2f2); /* Firefox */
+    background:-webkit-linear-gradient(top, #fff, #adf); /* Safari, Chrome */
+    background:-o-linear-gradient(top, #fff, #adf); /* Opera */
+    background:-ms-linear-gradient(top, #fff, #adf); /* IE */
+    background:linear-gradient(top, #fff, #adf); /* W3C Standard */
+    
+} 
+
+.slides_container {
+	width:570px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+}
+
+
+
+
+.slides_container div.slide {
+	width:570px;
+	height:270px;
+	display:block;
+}
+
+.caption {
+	z-index:500;
+	position:absolute;
+	bottom:-35px;
+	left:0;
+/*	height:30px;*/
+	padding:5px 20px 0 20px;
+	background:#000;
+	background:rgba(0,0,0,.5);
+	width:540px;
+	font-size:1.3em;
+	line-height:1.33;
+	color:#fff;
+	border-top:1px solid #000;
+	text-shadow:none;
+        vertical-align: baseline;
+        outline: 0px none;
+        
+        font: 62.5%/1.5 Helvetica,Arial,sans-serif;
+
+        
+        margin: 0px;
+
+}
+
+.pagination {
+	margin:26px auto 0;
+	width:100px;
+}
+
+.pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+.pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image:url(../img/pagination.png);
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.pagination li.current a {
+	background-position:0 -12px;
+}
+
+
+
+
+#roomheadline {
+	margin-left: 260px;
+	
+	
+}
+.themepreview{
+	border: black 1px solid;
+	position: relative;
+	left:14%;
+	margin-top:80px;
+	
+	margin-bottom: 8%;
+	float:left;
+}
+.theme-thumb{
+	position: relative;
+	width:300px;
+	height:150px;
+}
+.theme-thumb-div{
+	position: relative;
+	float:left;
+}
+.themepreview-description{
+	position: relative;
+	float:left;
+	width:260px;
+	padding-left: 5px;
+}
+
+.themepreview-imageanddescription{
+	position: relative;
+	float:left;
+}
+#createnewthemebutton{
+	position: absolute;
+	top:3%;
+}
