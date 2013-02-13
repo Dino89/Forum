@@ -37,8 +37,10 @@ class Ability
       else
         #user
        can :read, :all
+       can :create, [Theme, Comment]
       end
     else 
+      # everbody can see everything
        can :read, :all
     end
   end

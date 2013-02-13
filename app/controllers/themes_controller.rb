@@ -1,4 +1,7 @@
 class ThemesController < ApplicationController
+  # for CanCan 
+  load_and_authorize_resource
+  
   # GET /themes
   # GET /themes.json
   def index

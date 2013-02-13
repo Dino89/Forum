@@ -2,6 +2,9 @@
 
 
 <div id="content">
+	<% if can? :create, @room %>
+ 		 <%= link_to "Neuen Raum erstellen", new_room_path(@room) %>
+	<% end %>
         <div id="catlist">
             <ul>
 			   <% @rooms.each do |room| %>
@@ -21,10 +24,4 @@
         </div>
 </div>
 
-
 <br />
-
-<% if can? :create, @room %>
-  <%= link_to "Neuen Raum erstellen", new_room_path(@room) %>
-<% end %>
-

@@ -21,9 +21,21 @@
     <td><%= theme.description %></td>
     <td><%= theme.user_id %></td>
     <td><%= theme.room_id %></td>
-    <td><%= link_to 'Show', theme %></td>
-    <td><%= link_to 'Edit', edit_theme_path(theme) %></td>
-    <td><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    
+    <% @themes.each do |theme| %>
+					<li> 
+   	               		<%= link_to theme.title, theme %>
+   	               
+   	               		<% if can? :edit, @theme %>
+    						<%= link_to 'editieren', edit_theme_path(theme) %>
+    			  		<% end %>
+    			   
+    			  		<% if can? :delete, @theme %>
+       				    	<%= link_to 'löschen', theme, method: :delete, data: { confirm: 'Are you sure?' } %>
+        		   		<% end %>
+			   		</li>
+				<% end %>
+    
   </tr>
 <% end %>
 </table>

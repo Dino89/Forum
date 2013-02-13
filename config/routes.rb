@@ -6,20 +6,26 @@ Forum::Application.routes.draw do
   get "start_page/show"
 
   devise_for :users
-  #match 'create_user_like' => 'ratings#create_user_like'
 
   resources :comments do
     member do
       get 'like'
-      get 'dislike'
     end
   end
 
   resources :subscriptions
 
-  resources :rooms
+  resources :rooms do
+    member do
+      
+    end
+  end
 
-  resources :themes
+  resources :themes do
+    member do
+      
+    end
+  end
   
   resources :start_page
  

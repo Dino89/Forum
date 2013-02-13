@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  # for CanCan 
+  load_and_authorize_resource
+  
   # GET /comments
   # GET /comments.json
   def index
@@ -87,13 +90,6 @@ class CommentsController < ApplicationController
     else current_user.flag(@comment, :like)
     end
     
-    redirect_to(:back)
-  end
-  
-  def dislike
-    @comment = Comment.find(params[:id])
-    
-    current_user.unflag(@comment, :like)
     redirect_to(:back)
   end
 end
