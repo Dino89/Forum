@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class CommentsController < ApplicationController
   # for CanCan 
   load_and_authorize_resource
@@ -50,7 +52,9 @@ class CommentsController < ApplicationController
         format.json { render json: @comment, status: :created, location: @comment }
       else
        
-        format.html { render action: "new" }
+        #format.html { render action: "new" }
+       
+        format.html { redirect_to :back, :alert => "Bitte alle Felder ausfüllen" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end

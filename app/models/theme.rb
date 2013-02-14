@@ -5,6 +5,9 @@ class Theme < ActiveRecord::Base
   has_one :user
   belongs_to :room
   
-  validates_presence_of :description, :room_id, :title, :user_id
-  validates :description, :title, :uniqueness => true
+  #validates_presence_of :description, :room_id, :title, :user_id
+  #validates :description, :title, :uniqueness => true
+  
+  validates_presence_of :title, :description
+  
 end

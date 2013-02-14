@@ -1,3 +1,6 @@
+# encoding: UTF-8
+
+
 class ThemesController < ApplicationController
   # for CanCan 
   load_and_authorize_resource
@@ -52,7 +55,7 @@ class ThemesController < ApplicationController
         format.html { redirect_to @theme, notice: 'Theme was successfully created.' }
         format.json { render json: @theme, status: :created, location: @theme }
       else
-        format.html { render action: "new" }
+        format.html {  redirect_to :back, :alert => "Bitte alle Felder ausfüllen" }
         format.json { render json: @theme.errors, status: :unprocessable_entity }
       end
     end

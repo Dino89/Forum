@@ -8,6 +8,6 @@ class Comment < ActiveRecord::Base
   
 
  
-   #validates_presence_of :title, :text
+   validates_presence_of :title, :text, :message => "kjhkj"
   
 end
