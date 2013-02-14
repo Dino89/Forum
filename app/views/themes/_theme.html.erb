@@ -11,10 +11,11 @@
 	<%= theme.description%>
 	    </div>
 	</div>
-								  	<% if current_user.has_role? :admin  %>
-							  		<li><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-							  	<% end %>
-	
+	<% if user_signed_in? %>
+		<% if current_user.has_role? :admin  %>
+			<li><%= link_to 'Destroy', theme, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+		<% end %>
+	<% end %>
 	
 </div>
 
