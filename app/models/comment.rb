@@ -5,4 +5,9 @@ class Comment < ActiveRecord::Base
   belongs_to :user
   has_many :ratings
   belongs_to :theme
+  
+
+ 
+   #validates_presence_of :title, :text
+  
 end

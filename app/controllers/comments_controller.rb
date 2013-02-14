@@ -49,6 +49,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
         format.json { render json: @comment, status: :created, location: @comment }
       else
+       
         format.html { render action: "new" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
@@ -78,17 +79,19 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to comments_url }
+      format.html { redirect_to(:back) }#comments_url }
       format.json { head :no_content }
     end
   end
   
   def like
+  
     @comment = Comment.find(params[:id])
     if current_user.flagged?(@comment, :like) 
       current_user.unflag(@comment, :like)
     else current_user.flag(@comment, :like)
     end
+   
     
     redirect_to(:back)
   end

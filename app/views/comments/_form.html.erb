@@ -10,6 +10,9 @@
       </ul>
     </div>
   <% end %>
+  
+  
+  
   <div class="field">
     <%= f.label 'Inhalt' %><br />
     <%= f.text_area :text %>
@@ -21,7 +24,7 @@
   <div class="field">
   	<%= f.label 'Wertung:' %><br />
     <%= f.label 'pro / contra / neutral' %><br />
-    <%#= f.number_field :procontra %>
+    
     <%= f.select :procontra,
        ["pro", "contra", "neutral"] %>
   </div>
@@ -30,10 +33,12 @@
     <input type="hidden" value="<%= current_user.id %>" name="comment[user_id]" type="number">
   <% end %>
   
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 
   
   <input type="hidden" value="<%= Theme.find(params[:theme]).id %>" name="comment[theme_id]" type="number">
+  
+    <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

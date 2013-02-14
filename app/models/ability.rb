@@ -39,6 +39,7 @@ class Ability
         can :create, Theme
         can :create, Comment
        can :read, :all
+       can :like, Comment
        
       end
     else 

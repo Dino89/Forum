@@ -38,7 +38,14 @@
 	<% if current_user.has_role? :admin or current_user.has_role? :user %>
 		<p class="cssbutton"> <%= toggle_like_button(comment, current_user) %> </p>
 	<% end %>
-<% end %>
 
+
+							  	<% if current_user.has_role? :admin  %>
+							  		<li><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+							  	<% end %>
+							  	
+
+								
+<% end %>
 </div>
 <br /><br />

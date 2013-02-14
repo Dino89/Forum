@@ -1,3 +1,4 @@
+<div id="content">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -33,9 +34,20 @@
 <%= render partial: "comments/comment", collection: @theme.comments %>
 
 
+ 	<% if current_user.present? %>
+ 		
+ 		
+ 			
+ 			<% if can? :create, Comment %>
+ 					
+ 					<%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%>
+ 		    <% end %>  	 
+ 		
+ 		
+ 			
+	<% end %>  
 
 
-<%= link_to 'Edit', edit_theme_path(@theme) %> |
-<%= link_to 'Back', themes_path %>
-<%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%>
 
+
+</div>

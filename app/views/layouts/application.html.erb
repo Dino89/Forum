@@ -7,6 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+								<% if current_user  %>
+								
+									<% @user = User.find_by_id(current_user.id) %>
+								
+							  		<li><% @user.add_role :user %></li>
+							  	<% end %>
+	
 	
 	<div id="headerbox">
             <header>
@@ -23,7 +30,7 @@
 					  	<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete%></li>
 					  	<li><%= link_to 'Benutzerkonto', edit_user_registration_path %></li>
 					  	
-							  	<% if current_user.admin == true  %>
+							  	<% if current_user.has_role? :admin  %>
 							  		<li><%= link_to 'Benutzer bearbeiten', edit_user_registration_path %></li>
 							  	<% end %>
 					  	<% else %>
