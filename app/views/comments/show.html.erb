@@ -1,3 +1,6 @@
+
+
+
 <div id="content">qqqqq
 <p id="notice"><%= notice %></p>
 
@@ -31,10 +34,11 @@
 	  		<b>User:</b>
 	  			<%= @comment.user_id %>
 		</p>
-	<% end %>
+	<% end %>	
 <% end %>
 
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Edit', :controller => "comments", :action => "edit", :theme => @comment.theme_id %> |
+
+<%= link_to 'Back', :back %>
 </div>
