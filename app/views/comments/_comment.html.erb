@@ -19,20 +19,29 @@
 	
 </style>
 
-
-<div>
-	<div><%= comment.created_at.strftime("%d.%m.%Y %H:%M")%> </div>
-	<div><%= comment.title%> </div>
+<% if comment.procontra == 'pro'%>
+<div class="comment" style="background-color: #53af6b;">
+	<%end%>
+<% if comment.procontra == 'contra'%>
+<div class="comment" style="background-color: #b23333;">
+	<%end%>
+<% if comment.procontra == 'neutral'%>
+<div class="comment" style="background-color:#CCCCCC;">
+	<%end%>			
+	<a name=<%=comment.id %>> </a>
 	
-	<div>
+	
+	<div class="userinfo">
 		<div><%= comment.user.nickname  %></div> 
 		<div><%= comment.user.location  %></div>
 		<div><%= comment.user.gender  %></div>
 	</div>
-<%= comment.procontra%> <br>
-<% if comment.procontra == 'pro'%>
-<%= comment.text%> <br>
-<% end %>
+<div class="comment-content">
+<div>Am: <%= comment.created_at.strftime("%d.%m.%Y %H:%M")%> </div>
+<div> Titel: <%= comment.title%></div> <br>
+
+<div><%= comment.text%> </div><br>
+</div>
 
 <% if current_user.present? %>
 	<% if current_user.has_role? :admin or current_user.has_role? :user %>
