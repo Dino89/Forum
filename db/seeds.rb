@@ -47,7 +47,7 @@
                :title => "Ihr seid doch von allen guten Geistern dieser eigentlich wunderbaren Erde verlassen! Was soll man mit so einem mit Technik vollgestopften Teil ???????????????????????????????", 
                :procontra => "contra", :user_id => "6", :theme_id => "6"},
     {:text => "Aber das Nexus ist definitiv n Knaller, WENN es denn lieferbar wäre. Egal, Hauptsache Android!", :title => "Ich hab schon n HTC.", :procontra => "neutral", :user_id => "5", :theme_id => "6"},
-    {:text => " Recht hast du, Dino! Aber ich Nexus ist das einzig wahre, unverbasteltes Android. Ich bekomme mit einem Nexus immer sofort neue Updates, während andere hoffen müssen, OB und wenn ja, WANN sie Updates bekommen. ", :title => "Hauptsache Android", :procontra => "positiv", :user_id => "3", :theme_id => "6"},
+    {:text => " Recht hast du, Dino! Aber ich Nexus ist das einzig wahre, unverbasteltes Android. Ich bekomme mit einem Nexus immer sofort neue Updates, während andere hoffen müssen, OB und wenn ja, WANN sie Updates bekommen. ", :title => "Hauptsache Android", :procontra => "pro", :user_id => "3", :theme_id => "6"},
     ])
     
    u = User.find_by_id(1).flag(Comment.find_by_id(4), :like)
