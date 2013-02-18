@@ -1,6 +1,6 @@
-<div id="content">
+<div id="form">
 <h2>Passwort vergessen?</h2>
-
+<div id="formcontent">
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
@@ -10,4 +10,5 @@
   <div><%= f.submit "Neues Passwort zusenden lassen" %></div>
 <% end %>
 
+</div>
 </div>

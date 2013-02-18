@@ -1,5 +1,8 @@
-<div id="content">
-<h2>Neu im Forum anmelden</h2>
+
+	<div id="form">
+	<h2>Neu im Forum anmelden</h2>
+	
+    <div id="formcontent">
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -26,5 +29,5 @@
 
   <div><%= f.submit "registrieren" %></div>
 <% end %>
-
+</div>
 </div>
