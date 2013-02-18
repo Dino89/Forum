@@ -1,6 +1,6 @@
-<div id="content">
+	<div id="form">
 <h2>Login</h2>
-
+   <div id="formcontent">
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
 <%= content_tag(:div, flash[:error], :id => "flash_error") if flash[:error] %>
@@ -22,7 +22,9 @@
 <% end %>
 </br>
 </br>
-<%= link_to "--> Passwort vergessen?", new_password_path(resource_name) %><br />
+<%= link_to "Passwort vergessen?", new_password_path(resource_name) %><br />
 
-</div>>
+</div>
+
+</div>
 
