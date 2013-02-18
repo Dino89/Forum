@@ -26,17 +26,17 @@
     {:text => "Ein guter Anfang, jedoch gibt es noch Verbesserungspotential", :title => "Naja", :procontra => "neutral", :user_id => "5", :theme_id => "1"},
     {:text => "Da bin ich ganz sicher. Sie sind topmotiviert und haben starke Leute auf der Bank.", :title => "Bayern wird Meister", :procontra => "pro", :user_id => "3", :theme_id => "4"},
     {:text => "BVB wird wieder die Schale holen.", :title => "So ein Bloedsinn", :procontra => "contra", :user_id => "4", :theme_id => "4"},
-    {:text => "Wir sind dieses Jahr dran! Jawohl! Ein Leben lang Schalke!", :title => "Schalke wird's!", :procontra => "contra", :user_id => "3", :theme_id => "4"},
+    {:text => "Wir sind dieses Jahr dran! Jawohl! Ein Leben lang Schalke!", :title => "Schalke wird's!", :procontra => "contra", :user_id => "5", :theme_id => "4"},
     {:text => "Schalke ist keine Konkurrenz fuer Bayern. Warum habe die überhaupt Stevens entlassen???", :title => "Schalke? Niemals", :procontra => "neutral", :user_id => "3", :theme_id => "4"},
     {:text => "Der hat eh schon genug Kohle", :title => "Niemals", :procontra => "contra", :user_id => "3", :theme_id => "3"},
     {:text => "Besser als die Merkel! Was würde die sagen?! Alternativlos :-D", :title => "Wen sonst", :procontra => "pro", :user_id => "2", :theme_id => "3"},
     {:text => "Mir ist es total egal, wer Kanzler wird. Die machen eh, was die wollen.", :title => "Wen kümmert's?", :procontra => "contra", :user_id => "4", :theme_id => "0"},
-    {:text => "Ihr Zecken? Niemals!", :title => "Haha", :procontra => "contra", :user_id => "4", :theme_id => "5"},
+    {:text => "Ihr Zecken? Niemals!", :title => "Haha", :procontra => "contra", :user_id => "5", :theme_id => "5"},
     {:text => "Ihr habt ja schon seit Jahrzehnten noch nicht mal die Meisterschaft geholt, also würd ich mal ganz ruhig sein!", :title => "Schalke hat eh nix zu melden", :procontra => "neutral", :user_id => "3", :theme_id => "5"},
     {:text => "Ist sofort gekauft! Wie geil ist das denn?!", :title => "JAAAAAAAA", :procontra => "pro", :user_id => "1", :theme_id => "6"},
-    {:text => "Ich hab schon das Galaxy Nexus und es einfach genial!", :title => "Nexus 4ever", :procontra => "pro", :user_id => "2", :theme_id => "5"},
-    {:text => "Aber scheint ein sehr gutes Angebot zu sein.", :title => "Ich hab schon das S3.", :procontra => "neutral", :user_id => "3", :theme_id => "5"},
-    {:text => "Wenn interessiert denn Android?! Das Nexus kann gegen das iPohne einpacken.", :title => "Ich lieb mein iPhone", :procontra => "contra", :user_id => "4", :theme_id => "5"}
+    {:text => "Ich hab schon das Galaxy Nexus und es einfach genial!", :title => "Nexus 4ever", :procontra => "pro", :user_id => "2", :theme_id => "6"},
+    {:text => "Aber scheint ein sehr gutes Angebot zu sein.", :title => "Ich hab schon das S3.", :procontra => "neutral", :user_id => "3", :theme_id => "6"},
+    {:text => "Wenn interessiert denn Android?! Das Nexus kann gegen das iPohne einpacken.", :title => "Ich lieb mein iPhone", :procontra => "contra", :user_id => "4", :theme_id => "6"}
     ])
     
    u = User.find_by_id(1).flag(Comment.find_by_id(4), :like)
