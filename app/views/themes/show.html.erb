@@ -1,10 +1,6 @@
 <div id="content">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Id:</b>
-  <%= @theme.id %>
-</p>
 
 <p>
   <b>Title:</b>
@@ -21,33 +17,32 @@
   <%= @theme.description %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @theme.user_id %>
-</p>
 
-<p>
-  <b>Room:</b>
-  <%= @theme.room_id %>
-</p>
+<% if current_user.present? %>
+	<% if current_user.has_role? :admin  %>
+		<p>
+ 		  <b>Id:</b>
+  			<%= @theme.id %>
+		</p>
+		<p>
+		  <b>User:</b>
+		  <%= @theme.user_id %>
+		</p>
+		<p>
+		  <b>Room:</b>
+		  <%= @theme.room_id %>
+		</p>
+	<% end %>
+<% end %>
+
 
 <%= render partial: "comments/comment", collection: @theme.comments %>
 
 
- 	<% if current_user.present? %>
- 		
- 		
- 			
- 			<% if can? :create, Comment %>
- 					
- 					<%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%>
- 		    <% end %>  	 
- 		
- 		
- 			
-	<% end %>  
-
-
-
+<% if current_user.present? %>
+ 	<% if can? :create, Comment %>
+ 		<%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%>
+ 	<% end %>  	 
+<% end %>  
 
 </div>

@@ -1,10 +1,6 @@
-<div id="content">
+<div id="content">qqqqq
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Id:</b>
-  <%= @comment.id %>
-</p>
 
 <p>
   <b>Text:</b>
@@ -21,15 +17,23 @@
   <%= @comment.procontra %>
 </p>
 
-<p>
-  <b>Theme:</b>
-  <%= @comment.theme_id %>
-</p>
+<% if current_user.present? %>
+	<% if current_user.has_role? :admin  %>
+		<p>
+	  		<b>Id:</b>
+	  			<%= @comment.id %>
+		</p>
+		<p>
+	 		<b>Theme:</b>
+	  			<%= @comment.theme_id %>
+		</p>
+		<p>
+	  		<b>User:</b>
+	  			<%= @comment.user_id %>
+		</p>
+	<% end %>
+<% end %>
 
-<p>
-  <b>User:</b>
-  <%= @comment.user_id %>
-</p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
