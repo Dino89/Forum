@@ -1,4 +1,4 @@
-
+<div id="content">
 <%= form_for(@comment) do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
@@ -47,5 +47,7 @@
 
     <div class="actions">
     <%= f.submit %>
+    
   </div>
 <% end %>
+</div>

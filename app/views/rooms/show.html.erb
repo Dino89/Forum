@@ -7,9 +7,7 @@
 
 
 
-	<% if can? :create, @room %>
- 		 <%= link_to "Neuen Raum erstellen", new_room_path(@room) %>
-	<% end %>
+
         <div id="catlist">
             <ul>
 			   <% @rooms.each do |room| %>

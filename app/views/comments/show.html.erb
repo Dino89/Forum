@@ -1,7 +1,5 @@
 
-
-
-<div id="content">qqqqq
+<div id="content">
 <p id="notice"><%= notice %></p>
 
 
@@ -38,7 +36,7 @@
 <% end %>
 
 
-<%= link_to 'Edit', :controller => "comments", :action => "edit", :theme => @comment.theme_id %> |
 
-<%= link_to 'Back', :back %>
+
+<%= link_to '--> Zurück zum Thema <--', :controller => "themes", :action => "show", :id => @comment.theme_id  %>
 </div>
