@@ -36,10 +36,27 @@
     {:text => "Ist sofort gekauft! Wie geil ist das denn?!", :title => "JAAAAAAAA", :procontra => "pro", :user_id => "1", :theme_id => "6"},
     {:text => "Ich hab schon das Galaxy Nexus und es einfach genial!", :title => "Nexus 4ever", :procontra => "pro", :user_id => "2", :theme_id => "6"},
     {:text => "Aber scheint ein sehr gutes Angebot zu sein.", :title => "Ich hab schon das S3.", :procontra => "neutral", :user_id => "3", :theme_id => "6"},
-    {:text => "Wenn interessiert denn Android?! Das Nexus kann gegen das iPohne einpacken.", :title => "Ich lieb mein iPhone", :procontra => "contra", :user_id => "4", :theme_id => "6"}
+    {:text => "Wenn interessiert denn Android?! Das Nexus kann gegen das iPhone einpacken.", :title => "Ich lieb mein iPhone", :procontra => "contra", :user_id => "4", :theme_id => "6"},
+    {:text => "Was soll eigentlich dieser Quatsch? Ich kann es einfach nicht glauben, überall laufen Leute herum, die mit ihrem Finger auf ihrem Handy hin und her wischen, 
+               als ob ihr Display beschlagen würde! Das hat man davon, wenn unbedingt eine Glasschicht die Vorderseite verunstalten muss! Da kann ich ja gleich ein Paket 
+               Brillenputztücher mit mir herum schleppen. Mir stinkt es, jeden Tag Tag mehrmals mein Brillengläser reinigen zu müssen! Und dann noch das Handy putzen?! 
+               Ohne mich! Ich will die guten alten Siemens Handys mit schönen breiten Tasten zurück! Anscheindend bin ich aber der einzige vernünftig gebliebene Mensch 
+               auf diesem Planeten! Zum Glück hat mein Siemens C35i mich bisher nicht im Stich gelassen. Das wird so schnell auch n icht passieren, schließlich steckt in 
+               diesem Qualitätsprodukt Ingenieurskunst. Wischt ihr ruhig weiter wie bekloppt auf eueren neumodischen Dingern herum. Mein Vorschlag für die nächste 
+               bahnbrechende Innovation: Ausfahrbare Scheibenwischer fürs Handy! Geht auch garantiert nicht kaputt... ", 
+               :title => "Ihr seid doch von allen guten Geistern dieser eigentlich wunderbaren Erde verlassen! Was soll man mit so einem mit Technik vollgestopften Teil ???????????????????????????????", 
+               :procontra => "contra", :user_id => "6", :theme_id => "6"},
+    {:text => "Aber das Nexus ist definitiv n Knaller, WENN es denn lieferbar wäre. Egal, Hauptsache Android!", :title => "Ich hab schon n HTC.", :procontra => "neutral", :user_id => "5", :theme_id => "6"},
+    {:text => " Recht hast du, Dino! Aber ich Nexus ist das einzig wahre, unverbasteltes Android. Ich bekomme mit einem Nexus immer sofort neue Updates, während andere hoffen müssen, OB und wenn ja, WANN sie Updates bekommen. ", :title => "Hauptsache Android", :procontra => "positiv", :user_id => "3", :theme_id => "6"},
     ])
     
    u = User.find_by_id(1).flag(Comment.find_by_id(4), :like)
+   u = User.find_by_id(1).flag(Comment.find_by_id(14), :like)
+   u = User.find_by_id(2).flag(Comment.find_by_id(13), :like)
+   u = User.find_by_id(5).flag(Comment.find_by_id(13), :like)
+   u = User.find_by_id(7).flag(Comment.find_by_id(13), :like)
+   u = User.find_by_id(7).flag(Comment.find_by_id(14), :like)
+   u = User.find_by_id(3).flag(Comment.find_by_id(18), :like)
     
   rooms = Room.create([
 

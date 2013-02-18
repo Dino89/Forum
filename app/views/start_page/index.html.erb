@@ -1,38 +1,40 @@
 <div id="content">
 			
-            <% @Theme = Theme.last%>
-            <% @Comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'contra' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @Theme.id])%>
+            <% @theme = Theme.last %>
+            <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'contra' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
             <div class="discussion">
                 
                 <div class="contra">
                     <ul>
-                    		<%@Comment.each do |comment| %>
+                    		<%@comment.each do |comment| %>
   							<li><%=comment.text %></li>
 							<%end%>
  						 
                     </ul>
                     
                 </div>
-                <% @Comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'pro' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @Theme.id])%>
+                <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'pro' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
                 <div class="pro">
                     <ul>
-                    		<%@Comment.each do |comment| %>
+                    		<%@comment.each do |comment| %>
   							<li><%=comment.text %></li>
 							<%end%>
                     </ul>
                     
                 </div>
                 <div class="discussion-content">
-                    <h3 class="discussion-title"><%= @Theme.title%></h3>
-                    <%= image_tag @Theme.picture, :class => "discussion-image"%>
+                    <h3 class="discussion-title">
+                    	<%= link_to @theme.title, theme_path(@theme) %>
+                    </h3>
+                    <%= image_tag @theme.picture, :class => "discussion-image"%>
                     <div class="discussion-discribtion">
-                        <%= @Theme.description%>
+                        <%= @theme.description%>
                     </div>
                 </div>
-                <% @Comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'neutral' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @Theme.id])%>
+                <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'neutral' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
                 <div class="neutral">
                 	 <ul>
-                    		<%@Comment.each do |comment| %>
+                    		<%@comment.each do |comment| %>
   							<li><%=comment.text %></li>
 							<%end%>
                     </ul>
