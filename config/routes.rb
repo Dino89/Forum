@@ -4,7 +4,9 @@ Forum::Application.routes.draw do
   get "start_page/index"
   
   get "start_page/show"
-
+  
+  post "search/index"
+  
   devise_for :users
 
   resources :comments do

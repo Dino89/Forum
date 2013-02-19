@@ -3,7 +3,7 @@
 
 
 			
-            <% @theme = Theme.last %>
+            
             <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'contra' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
             <div class="discussion">
                 

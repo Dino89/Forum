@@ -40,7 +40,7 @@
 					  <% end %>
 				   </ul>
                 </nav>
-                <input type="text" id="search" value=" Search...">
+                <%= form_tag "/search/index" do %><input type="text" id="search" name="searchstring" value=" Search..." onclick=$('#search').val("")> <% end %>
             </header>
         </div>
 
