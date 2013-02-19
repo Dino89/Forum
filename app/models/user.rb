@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :subscriptions, :dependent => :destroy
   has_many :themes
-  has_many :ratings
+  #has_many :ratings
   
   validates :nickname, :email, presence: false
   validates :nickname, :email, uniqueness: true

@@ -4,7 +4,7 @@
 	color:black;
 	font-weight:normal;
 	padding:10px;
-	width:90px;
+	width:130px;
 	height:22px;
 	border:solid 0.5px #b8babc;
 	border-radius:10px;
@@ -20,13 +20,13 @@
 </style>
 
 <% if comment.procontra == 'pro'%>
-<div class="comment" style="background-color: #53af6b;">
+<div class="comment" style="background-color: rgba(0, 255, 0, 0.2);">
 	<%end%>
 <% if comment.procontra == 'contra'%>
-<div class="comment" style="background-color: #b23333;">
+<div class="comment" style="background-color: rgba(240, 20, 20, 0.09);">
 	<%end%>
 <% if comment.procontra == 'neutral'%>
-<div class="comment" style="background-color:#CCCCCC;">
+<div class="comment" style="background-color: rgba(20, 20, 20, 0.09);">
 	<%end%>			
 	<a name=<%=comment.id %>> </a>
 	
@@ -45,7 +45,7 @@
 
 <% if current_user.present? %>
 	<% if current_user.has_role? :admin or current_user.has_role? :user %>
-		<p class="cssbutton"> <%= toggle_like_button(comment, current_user) %> </p>
+		<p class="cssbutton"> <%= toggle_like_button(comment, current_user) %> | <%= ActiveRecord::Base.connection.select_all("select count(*) as anzahl from flaggings where flaggable_id ="+((comment.id).to_s)).first['anzahl'] %> Likes</p>
 	<% end %>
 
 
