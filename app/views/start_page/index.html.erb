@@ -7,7 +7,7 @@
                 <div class="contra">
                     <ul>
                     		<%@comment.each do |comment| %>
-  							<li><%=comment.text %></li>
+  							<li><%=comment.title %></li>
 							<%end%>
  						 
                     </ul>
@@ -17,7 +17,7 @@
                 <div class="pro">
                     <ul>
                     		<%@comment.each do |comment| %>
-  							<li><%=comment.text %></li>
+  							<li><%=comment.title %></li>
 							<%end%>
                     </ul>
                     
@@ -35,7 +35,7 @@
                 <div class="neutral">
                 	 <ul>
                     		<%@comment.each do |comment| %>
-  							<li><%=comment.text %></li>
+  							<li><%=comment.title %></li>
 							<%end%>
                     </ul>
                 </div>
