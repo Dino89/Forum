@@ -1,0 +1,40 @@
+<div id="searchresults">
+	
+	
+	
+	
+	<h3>Suchergebnisse</h3>
+			<h5>Gefundene Themen</h5>
+			<% if @theme %>
+			<% if @theme.length == 0%>
+			Keine Themen mit Suchwort gefunden
+			<%else%>
+			<ul class="themelist">
+	       		<%@theme.each do |theme| %>
+				<li><%= link_to theme.title, theme_path(theme) %></li>
+				<%end%>
+			</ul>
+			<%end%>
+			<%else%>
+			Keine Themen mit Suchwort gefunden
+			<%end%>
+			 <br>
+			
+			<h5>Gefundene Kommentare</h5>
+			<%if @comment%>
+			<%if @comment.length == 0 %>
+			Keine Kommentare mit Suchwort gefunden
+			<%else%>
+			<ul class="themelist">
+	       		<%@comment.each do |comment| %>
+	       		
+				<li><pre><%= link_to comment.title, theme_path(comment.theme_id)+"#"+comment.id.to_s %> 	gefunden in:  <%= link_to comment.theme.title, theme_path(comment.theme) %></pre></li>
+				<%end%>
+			</ul>
+
+			<%end%>
+			<%else%>
+			Keine Kommentare mit Suchwort gefunden
+			
+			<%end%> 	
+</div> 

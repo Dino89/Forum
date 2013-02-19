@@ -2,20 +2,50 @@
 <p id="notice"><%= notice %></p>
 
 
-<p>
-  <b>Title:</b>
-  <%= @theme.title %>
-</p>
+			
+            
+            <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'contra' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
+            <div class="discussion">
+                
+                <div class="contra">
+                    <ul>
+                    		<%@comment.each do |comment| %>
+  							<li><a href=#<%=comment.id %>> <%=comment.title %></a></li>
+							<%end%>
+ 						 
+                    </ul>
+                    
+                </div>
+                <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'pro' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
+                <div class="pro">
+                    <ul>
+                    		<%@comment.each do |comment| %>
+  							<li><a href=#<%=comment.id %>> <%=comment.title %></a></li>
+							<%end%>
+                    </ul>
+                    
+                </div>
+                <div class="discussion-content">
+                    <h3 class="discussion-title">
+                    	<%= link_to @theme.title, theme_path(@theme) %>
+                    </h3>
+                    <%= image_tag @theme.picture, :class => "discussion-image"%>
+                    <div class="discussion-discribtion">
+                        <%= @theme.description%>
+                    </div>
+                </div>
+                <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'neutral' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
+                <div class="neutral">
+                	 <ul>
+                    		<%@comment.each do |comment| %>
+  							<li><a href=#<%=comment.id %>> <%=comment.title %></a></li>
+							<%end%>
+                    </ul>
+                </div>
 
-<p>
-  <b>Picture:</b>
-  <%= @theme.picture %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @theme.description %>
-</p>
+                
+            </div>
+        
 
 
 <% if current_user.present? %>
@@ -35,6 +65,7 @@
 	<% end %>
 <% end %>
 
+<hr />
 
 <%= render partial: "comments/comment", collection: @theme.comments %>
 

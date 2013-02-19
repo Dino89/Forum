@@ -1,4 +1,4 @@
-<div id="content">
+<div id="form">
 	<% @tmp_user = User.find_by_id(current_user.id) %>
 	
 	
@@ -6,7 +6,7 @@
 </br>
 <p><b> Hier können Sie Änderungen an Ihren Persönlichen Einstellungen vornehmen:</b> </p>
 	
-
+<div id="formcontent">
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -48,5 +48,5 @@
 
 
 
-
+</div>
 </div>

@@ -2,6 +2,17 @@
 <div id=content style="width: 940px;">
 
 
+ 	 <div id=roomheadline><h4> <%= @room.title %> </h4> </div>
+ 	 <div id="createnewthemebutton">
+ 	<% if current_user.present? %>
+ 			
+ 			<% if can? :create, Theme %>
+ 					
+ 					 <%= link_to 'Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
+ 		    <% end %>  	 
+ 			
+	<% end %>  
+ </div>
 
  
 
@@ -27,20 +38,6 @@
         </div>
 <%= render partial: "themes/theme", collection: @room.themes %>
 
- <div id="createnewthemebutton">
- 	 <div id=roomheadline><h4> <%= @room.title %> </h4> </div>
- 	<% if current_user.present? %>
- 		
- 		
- 			
- 			<% if can? :create, Theme %>
- 					
- 					 <%= link_to 'Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
- 		    <% end %>  	 
- 		
- 		
- 			
-	<% end %>  
- </div>
+ 
 
 </div>
