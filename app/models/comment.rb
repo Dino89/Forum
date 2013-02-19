@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
   make_flaggable :like
   
-  attr_accessible :id, :procontra, :text, :theme_id, :title, :user_id
+  attr_accessible :id, :procontra, :text, :theme_id, :title, :user_id, :updated_at
   belongs_to :user
   has_many :ratings
   belongs_to :theme

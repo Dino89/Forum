@@ -113,5 +113,6 @@
    
   subscriptions = Subscription.create([
     {:user_id => 1, :theme_id => 4},
-    {:user_id => 4, :theme_id => 4}
+    {:user_id => 7, :theme_id => 4},
+    {:user_id => 7, :theme_id => 4}
   ])
