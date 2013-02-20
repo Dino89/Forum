@@ -32,11 +32,10 @@ class ThemesController < ApplicationController
         end
         @themeVisit.save
     end
+    
     respond_to do |format|
-      format.html # show.html.erb
+      format.html  #show.html.erb
       format.json { render json: @theme }    
-      
-      
     end
   end
 
@@ -98,5 +97,15 @@ class ThemesController < ApplicationController
       format.html { redirect_to(:back) }
       format.json { head :no_content }
     end
+  end
+  
+  def subscribe_theme 
+    Subscription.create(:user_id => current_user.id, :theme_id => @theme.id)
+    redirect_to(:back)
+  end
+  
+  def unsubscribe_theme
+    Subscription.find_by_id(params[:users_subscription_id]).destroy
+    redirect_to(:back)
   end
 end

@@ -25,7 +25,8 @@ Forum::Application.routes.draw do
 
   resources :themes do
     member do
-      
+      get 'subscribe_theme'
+      get 'unsubscribe_theme'
     end
   end
   
