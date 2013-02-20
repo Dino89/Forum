@@ -25,7 +25,7 @@
                <h4> Derzeit angesagte Themen:</h4>
                 <br>
                 <ul class="themelist">
-                    <% @Theme = Theme.find_by_sql(["SELECT * FROM themes ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id AND created_at >= DATE_SUB(CURDATE(),INTERVAL 7 DAY)) DESC"])%>
+                    <% @Theme = Theme.find_by_sql(["SELECT * FROM themes ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id AND created_at >= DATE_SUB(CURRENT_DATE,INTERVAL 7 DAY)) DESC"])%>
                     <%@Theme.each do |theme| %>
   					<li> <div><%= link_to theme.title, theme_path(theme) %></div> </li> 
 					<%end%>
