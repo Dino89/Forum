@@ -20,10 +20,6 @@ test:
   
 production:
   adapter: postgresql
-  encoding: unicode
-  database: forumData
-  pool: 5
-  username: 
-  password: 
-  host: 127.0.0.1
-  port: 5432
+  host: localhost
+  username: user
+  database: app-dev
