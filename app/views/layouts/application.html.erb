@@ -30,8 +30,10 @@
 						  	<li> <%= link_to 'Benutzerkonto', edit_user_registration_path %> </li>
 						  	
 						  	<% @subscribed_themes = link_to_news_in_subscriptions(current_user.id) %>
-						  	<% @subscribed_themes.each do |s| %>
-						  		<li> <%= link_to s.title, theme_path(s.id)%> </li>
+						  	<% if !@subscribed_themes.nil? 
+						  		@subscribed_themes.each do |s| %>
+						  			<li> <%= link_to s.title, theme_path(s.id)%> </li>
+						  		<% end %>
 						  	<% end %>
 						  	
 						  	<% if current_user.has_role? :admin  %>

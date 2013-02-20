@@ -114,5 +114,11 @@
   subscriptions = Subscription.create([
     {:user_id => 1, :theme_id => 4},
     {:user_id => 7, :theme_id => 4},
-    {:user_id => 7, :theme_id => 4}
+    {:user_id => 7, :theme_id => 6}
+  ])
+  
+  themeVisits = ThemeVisit.create([
+    {:user_id => 1, :theme_id => 4, :time => "2013-02-19 23:46:34"},
+    {:user_id => 7, :theme_id => 4, :time => "2013-02-19 23:46:34"},
+    {:user_id => 7, :theme_id => 6, :time => "2013-02-20 02:46:14"}
   ])

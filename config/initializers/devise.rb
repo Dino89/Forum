@@ -225,11 +225,13 @@ Devise.setup do |config|
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
   
-  Warden::Manager.before_logout do |user,auth,opts|
+  #Warden::Manager.before_logout do |user,auth,opts|
   # store what ever you want on logout
   # If not in initializer it will generate two records (strange)
-    user.update_attribute(:logout_time, Time.now)
-  end
+  #  if !user.nil?
+  #    user.update_attribute(:logout_time, Time.now)
+  #  end
+  #end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine

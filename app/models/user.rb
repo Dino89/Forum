@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
+  
   make_flagger
   rolify
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -8,14 +10,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable#, :validatable
 
   # Setup accessible (or protected) attributes for your model
-
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname, :name, :location, :gender, :admin, :nickname, :encrypted_password, :current_password, :logout_time
-  # attr_accessible :title, :body
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :firstname, :name, :location, :gender, :admin, :nickname, :encrypted_password, :current_password
   
   has_many :comments
   has_many :subscriptions, :dependent => :destroy
   has_many :themes
-  #has_many :ratings
+  has_many :themeVisits, :dependent => :destroy
   
   validates :nickname, :email, presence: false
   validates :nickname, :email, uniqueness: true

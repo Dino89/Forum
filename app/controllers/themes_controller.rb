@@ -20,7 +20,18 @@ class ThemesController < ApplicationController
   # GET /themes/1.json
   def show
     @theme = Theme.find(params[:id])
-
+    if current_user.present?
+        @user = User.find(current_user.id)
+    
+        # create or update the user's visit of the showed theme
+        @themeVisit = ThemeVisit.where(:user_id => @user.id, :theme_id => @theme.id).first
+        if @themeVisit.nil?
+           @themeVisit = ThemeVisit.create(:time => Time.now, :user_id => @user.id, :theme_id => @theme.id)
+        else 
+           @themeVisit.update_attributes(:time => Time.now)
+        end
+        @themeVisit.save
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @theme }    
