@@ -5,8 +5,14 @@ gem 'rails', '3.2.8'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :production do
+  gem 'pg'
+end        
 
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+
 gem 'devise'
 
 # gem for like button
@@ -47,5 +53,5 @@ gem 'cancan'
 gem 'rolify'
 
 
-gem 'pg'
+
 
