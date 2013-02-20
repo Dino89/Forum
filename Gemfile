@@ -46,6 +46,6 @@ gem 'devise'
 gem 'cancan'
 gem 'rolify'
 
-group :production do
+
 gem 'pg'
-end
+
