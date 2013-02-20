@@ -71,9 +71,14 @@
 
 
 <% if current_user.present? %>
- 	<% if can? :create, Comment %>
- 		<%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%>
- 	<% end %>  	 
+   <% if current_user.has_role? :admin or current_user.has_role? :user %>
+	 	<% if can? :create, Comment %>
+	 		<%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%>
+	 	<% end %>  	
+	 	<% if can? :subscribe_theme, Theme or can? :unsubscribe_theme, Theme %>
+	 		<p class="cssbutton"> <%= toggle_subscription_button(@theme) %> </p>
+	 	<% end %> 
+   <% end %>
 <% end %>  
 
 </div>

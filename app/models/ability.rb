@@ -40,7 +40,8 @@ class Ability
         can :create, Comment
        can :read, :all
        can :like, Comment
-       
+       can :subscribe_theme, Theme
+       can :unsubscribe_theme, Theme
       end
     else 
       # everbody can see everything
