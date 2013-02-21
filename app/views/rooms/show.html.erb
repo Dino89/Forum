@@ -52,12 +52,11 @@
  	 <h2 style="color: white" align="center">Willkommen im Raum <%= @room.title %> </h2> 
  	 <div class="cssbutton" align="left">
  	<% if current_user.present? %>
- 			
- 			<% if can? :create, Theme %>
- 					
- 					 <%= link_to 'Neues Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
- 		    <% end %>  	 
- 			
+		<% if can? :create, Theme %>
+			<%= link_to 'Neues Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
+	    <% end %>  	 
+ 	<% else %>
+ 		<%= link_to 'Neues Thema erstellen', new_user_registration_path%>
 	<% end %>  
  </div>
 

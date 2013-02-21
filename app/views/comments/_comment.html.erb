@@ -99,18 +99,22 @@
     font-weight: bold;
     }
 
-	
 </style>
+
+
+
 <div align="center" >
-<% if comment.procontra == 'pro'%>
-<div align="left"  class="comment" style="background-color: rgba(130, 230, 123, 0.9);">
+	
+	<% if comment.procontra == 'pro'%>
+		<div align="left"  class="comment" style="background-color: rgba(130, 230, 123, 0.9);">
 	<%end%>
-<% if comment.procontra == 'contra'%>
-<div align="left" class="comment" style="background-color: rgba(252, 102, 102, 0.9);">
+	<% if comment.procontra == 'contra'%>
+		<div align="left" class="comment" style="background-color: rgba(252, 102, 102, 0.9);">
 	<%end%>
-<% if comment.procontra == 'neutral'%>
-<div align="left" class="comment" style="background-color: rgba(223, 226, 209, 0.9);">
-	<%end%>			
+	<% if comment.procontra == 'neutral'%>
+		<div align="left" class="comment" style="background-color: rgba(223, 226, 209, 0.9);">
+	<%end%>		
+		
 	<a name=<%=comment.id %>> </a>
 	
 	
@@ -118,11 +122,14 @@
 		<div><%= comment.user.nickname  %></div> 
 		<div><%= comment.user.location  %></div>
 		<div><%= comment.user.gender  %></div> </br>
-	<% if current_user.present? %>
-	<% if current_user.has_role? :admin or current_user.has_role? :user %>
 		&nbsp; <div class="likes">Schon <%= ActiveRecord::Base.connection.select_all("select count(*) as anzahl from flaggings where flaggable_id ="+((comment.id).to_s)).first['anzahl'] %> likes</div>
-		&nbsp; &nbsp; &nbsp;<div class="cssbutton"> <%= toggle_like_button(comment, current_user) %> </div>
-	<% end end %>
+	 	<% if current_user.present? %>
+			<% if current_user.has_role? :admin or current_user.has_role? :user %>
+				&nbsp; &nbsp; &nbsp;<div class="cssbutton"> <%= toggle_like_button(comment, current_user) %> </div>
+			<% end %>
+		<% else %>
+			&nbsp; &nbsp; &nbsp;<div class="cssbutton"> <%= link_to 'Like', new_user_registration_path%> </div>
+	  	<% end %>
 	</div>
 
 <div class="comment-content">
