@@ -154,26 +154,36 @@ body{
     border: 1px solid black;
     float: left;
     padding-left: 5px;
-    margin-left: -15px;
-}
-#catlist li{
-    padding-bottom: 10px;
-    padding-top: 10px;
-    padding-right: 40px;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: larger;
-    font-color: black !important;
-    background: linear-gradient(top,#f2f2f2,#e4e4e4) url(pics/arrow-small.png) right no-repeat;
-    margin: 0px;
+    margin-left: 15px;
     
-    background:-moz-linear-gradient(top, #fff, #e4e4e4); /* Firefox */
-    background:-webkit-linear-gradient(top, #fff, #adf); /* Safari, Chrome */
-    background:-o-linear-gradient(top, #fff, #adf); /* Opera */
-    background:-ms-linear-gradient(top, #fff, #adf); /* IE */
-    background:linear-gradient(top, #fff, #adf); /* W3C Standard */
+       background-image: -webkit-linear-gradient(top, rgba(29,149,224,1) 0%,rgba(6,103,164,1) 100%);
+   background-image:    -moz-linear-gradient(top, rgba(29,149,224,1) 0%,rgba(6,103,164,1) 100%);
+   background-image:     -ms-linear-gradient(top, rgba(29,149,224,1) 0%,rgba(6,103,164,1) 100%);
+   background-image:      -o-linear-gradient(top, rgba(29,149,224,1) 0%,rgba(6,103,164,1) 100%);
+   background-image:         linear-gradient(top, rgba(29,149,224,1) 0%,rgba(6,103,164,1) 100%);
+   -webkit-box-shadow: 0px 25px 0px 0px rgba(255,255,255,0.08)inset, 0px 0px 0px 1px rgba(255,255,255,0.3)inset;
+      -moz-box-shadow: 0px 25px 0px 0px rgba(255,255,255,0.08)inset, 0px 0px 0px 1px rgba(255,255,255,0.3)inset;
+           box-shadow: 0px 25px 0px 0px rgba(255,255,255,0.08)inset, 0px 0px 0px 1px rgba(255,255,255,0.3)inset;
+   border: solid 1px rgba(9,81,126,1);
+   -webkit-border-radius: 26px;
+      -moz-border-radius: 26px;
+           border-radius: 26px;
+   width: 180px;
+   display: inline-block;
+   font-size: 30px;
+   line-height: 50px;
+   text-align: center;
+   color: rgba(255,255,255,1);
+   font-weight: bold;
+   text-shadow: 0px -1px 0px rgba(0,0,0,0.66)
 }
+
 #catlist li:hover{
-    background: #CCCCCC url(pics/arrow-small.png) right no-repeat;
+   background-image: -webkit-linear-gradient(top, rgba(43,165,240,1) 0%,rgba(6,103,164,1) 100%);
+   background-image:    -moz-linear-gradient(top, rgba(43,165,240,1) 0%,rgba(6,103,164,1) 100%);
+   background-image:     -ms-linear-gradient(top, rgba(43,165,240,1) 0%,rgba(6,103,164,1) 100%);
+   background-image:      -o-linear-gradient(top, rgba(43,165,240,1) 0%,rgba(6,103,164,1) 100%);
+   background-image:         linear-gradient(top, rgba(43,165,240,1) 0%,rgba(6,103,164,1) 100%);
 }
 #catlist ul{
     list-style: none;
@@ -190,6 +200,7 @@ body{
     
 }
 .themelist{
+	
     list-style: none;
     margin: 0px;
     padding: 0px;
@@ -203,6 +214,7 @@ body{
     background:-o-linear-gradient(top, #fff, #adf); /* Opera */
     background:-ms-linear-gradient(top, #fff, #adf); /* IE */
     background:linear-gradient(top, #fff, #adf); /* W3C Standard */
+    
     
 } 
 
@@ -313,8 +325,8 @@ body{
 	float:left;
 }
 #createnewthemebutton{
-	position: absolute;
 	
+		
 }
 
 

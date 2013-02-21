@@ -1,14 +1,61 @@
+<style>
+	div.cssbutton {
+	
+    background: #82B311;
+    -webkit-box-shadow: 0px 3px 0px 0px #6C940D, 0px -1px 0px 0px #9cd418 inset, 0px 2px 5px 0px #858585;
+    -moz-box-shadow: 0px 3px 0px 0px #6C940D, 0px -1px 0px 0px #9cd418 inset, 0px 2px 5px 0px #858585;
+    box-shadow: 0px 3px 0px 0px #6C940D, 0px -1px 0px 0px #9cd418 inset, 0px 2px 5px 0px #858585;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: all 0s 0;
+    -moz-transition: all 0s 0;
+    -o-transition: all 0s 0;
+    transition: all 0s 0;
+    text-shadow: 0px -1px 0px #6C940D;
+    padding: 5px 15px;
+    margin: 5px 0px;
+    border-color: #6C940D;
+    border-width: 1px;
+    border-style: solid;
+    font-size: 19px;
+    color: #fff;
+    font-weight: 100;
+    font-style: normal;
+    width: 175px;
+    
+	}
+	
+	.cssbutton:hover {
+    background: #398fa1;
+    -webkit-box-shadow: 0px 3px 0px 0px #316396, 0px -1px 0px 0px #41c0ad inset, 0px 2px 5px 0px #858585;
+    -moz-box-shadow: 0px 3px 0px 0px #316396, 0px -1px 0px 0px #41c0ad inset, 0px 2px 5px 0px #858585;
+    box-shadow: 0px 3px 0px 0px #316396, 0px -1px 0px 0px #41c0ad inset, 0px 2px 5px 0px #858585;
+    text-shadow: 0px -1px 0px #316496;
+    border-color: #316496;
+}
+.cssbutton:active {
+    background: #398fa1;
+    -webkit-box-shadow: 0px 1px 0px 0px #316396, 0px -1px 0px 0px #41c0ad inset;
+    -moz-box-shadow: 0px 1px 0px 0px #316396, 0px -1px 0px 0px #41c0ad inset;
+    box-shadow: 0px 1px 0px 0px #316396, 0px -1px 0px 0px #41c0ad inset;
+    text-shadow: 0px -1px 0px #316496;
+    margin: 7px 0px 3px 0px;
+    border-color: #316496;
+   }
+</style>
+
 <p id="notice"><%= notice %></p>
-<div id=content style="width: 940px;">
+<div id="content" style="width: 940px;">
 
 
- 	 <div id=roomheadline><h4> <%= @room.title %> </h4> </div>
- 	 <div id="createnewthemebutton">
+ 	 <h2 style="color: white" align="center">Willkommen im Raum <%= @room.title %> </h2> 
+ 	 <div class="cssbutton" align="left">
  	<% if current_user.present? %>
  			
  			<% if can? :create, Theme %>
  					
- 					 <%= link_to 'Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
+ 					 <%= link_to 'Neues Thema erstellen', :controller => "themes", :action => "new", :room => @room.id %>
  		    <% end %>  	 
  			
 	<% end %>  
