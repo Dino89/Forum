@@ -39,6 +39,7 @@ class Ability
         can :create, Theme
         can :create, Comment
        can :read, :all
+       cannot :read, User
        can :like, Comment
        can :subscribe_theme, Theme
        can :unsubscribe_theme, Theme
@@ -46,6 +47,7 @@ class Ability
     else 
       # everbody can see everything
        can :read, :all
+       cannot :read, User
     end
   end
 end

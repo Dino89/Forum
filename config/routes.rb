@@ -7,8 +7,13 @@ Forum::Application.routes.draw do
   
   post "search/index"
   
-  devise_for :users
 
+  devise_for :users
+    scope "/admin" do
+      resources :users
+      
+    end
+  
   resources :comments do
     member do
       get 'like'

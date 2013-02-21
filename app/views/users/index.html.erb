@@ -1,0 +1,25 @@
+# endoding: UTF-8
+<div>
+		
+	<h1>Übersicht über die Nutzer</h1>
+	
+	<table>
+	
+	<% @users = User.all %>
+	<% @users.each do |user| %>
+	    <% @u = User.find(user.id) %>
+	  <tr>
+	  	<th> <%= @u.nickname %> </th>
+	  	<td> <%= @u.name %> </td>
+	  	<td> <%= @u.firstname %> </td>
+	  	<td> <%= @u.email %> </td>
+	  	<td> <%= @u.location %> </td>
+	  	<td> <%= @u.gender %> </td>
+	  	<td> | </td>
+	    <td> <%= link_to 'bearbeiten', :controller => "users", :action => "edit", :id => user.id %></td>
+	    <td> <%= link_to 'löschen ', @u, method: :delete, data: { confirm: 'Möchten Sie diesen Nutzer wirklich nutzen?' }%> </td>
+	  </tr>
+	<% end %>
+	</table>
+
+</div>

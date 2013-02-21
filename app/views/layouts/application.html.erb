@@ -37,7 +37,7 @@
 						  	<% end %>
 						  	
 						  	<% if current_user.has_role? :admin  %>
-								  	<li><%= link_to 'Benutzer bearbeiten', edit_user_registration_path %></li>
+								  	<li><%= link_to 'Benutzerverwaltung', users_path %></li>
 							<% end %>
 							
 						<% else %>

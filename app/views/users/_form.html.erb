@@ -1,0 +1,44 @@
+<div id="form">
+<div id="formcontent">	
+
+<h2> Benutzerinformationen </h2>	
+	
+<%= form_for(@user) do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div> <b>Nickname:</b> </br>
+  	<%= f.text_field :nickname  %></div>
+  <div> <b>Name:</b> </br>
+  	<%= f.text_field :name  %></div>
+  <div> <b>Vorname:</b> </br>
+  	<%= f.text_field :firstname  %></div>
+  <div> <b>Wohnort:</b> </br>
+  	<%= f.text_field :location  %></div>
+  <div> <b>Geschlecht:</b> 
+  	<%= f.select :gender, options_for_select([["männlich", "männlich"], ["weiblich", "weiblich"]]) %></div>
+  
+  <div> <b>Email:</b> </br>
+  	<%= f.email_field :email%></div>
+
+  <div><b>Neues Passwort:</b><i>(Leer lassen, sollten Sie Ihr Passwort nicht ändern wollen)</i> <br />
+  <%= f.password_field :password, :autocomplete => "off" %></div>
+
+  <div><%= f.submit "Änderungen speichern" %></div>
+  
+<% end %>
+
+
+</div>
+</div>
