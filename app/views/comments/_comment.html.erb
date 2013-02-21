@@ -137,7 +137,7 @@
 
 
 							  	<% if current_user.has_role? :admin  %>
-							  		<li> <%= link_to 'Löschen', comment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+							  		<li> <%= link_to 'Löschen', comment, method: :delete, data: { confirm: 'Sind Sie sicher?' } %></li>
 									
 									<li> <%= link_to 'Editieren', :controller => "comments", :action => "edit", :theme => comment.theme_id, :id => comment.id %> 
 							  	<% end %>

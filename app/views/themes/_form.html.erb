@@ -21,20 +21,20 @@
   
   
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, value="Name" %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :picture %><br />
+    <%= f.label :picture, value="Bild" %><br />
     <%= f.text_field :picture %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
+    <%= f.label :description, value="Beschreibung" %><br />
     <%= f.text_area :description %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit value="übernehmen"%>
   </div>
   
     <% if current_user %>
