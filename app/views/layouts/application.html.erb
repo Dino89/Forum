@@ -5,6 +5,17 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+          <script type="text/javascript">
+      $(function() {
+        $( "#abobox" ).dialog({autoOpen: false , position: "center", show: "blind",hide: "fade", title: "Neues in abonnierten Themen", width: "340px"});
+        
+    });
+            function openabobox(){
+                $( "#abobox" ).dialog( "open" );
+                
+                
+            };
+        </script>
 </head>
 <body>
 								<% if current_user  %>
@@ -24,17 +35,18 @@
                         <li><%= link_to 'Räume', rooms_path%></li>
                         <li></li>
                         <% if current_user  %>
-	
+                        
+						  <% @news_in_subscribed_themes = link_to_news_in_subscriptions(current_user.id) %>
+						  <% if @news_in_subscribed_themes.nil?%>
+						  	<li onclick="openabobox()" style="cursor: pointer;"> Neues in abonnierten Themen </li>
+						  <% else %>	
+						    <li onclick="openabobox()" style="cursor: pointer;" > Neues in abonnierten Themen (<%= @news_in_subscribed_themes.count %>)</li>
+						  <%end%>
+						  
 						  	<li> Eingelogt als: <%= current_user.email%> </li> 
 						  	<li> <%= link_to 'Logout', destroy_user_session_path, method: :delete%> </li>
 						  	<li> <%= link_to 'Benutzerkonto', edit_user_registration_path %> </li>
-						  	
-						  	<% @news_in_subscribed_themes = link_to_news_in_subscriptions(current_user.id) %>
-						  	<% if !@news_in_subscribed_themes.nil? 
-						  		@news_in_subscribed_themes.each do |s| %>
-						  			<li> <%= link_to s.title, theme_path(s.id)%> </li>
-						  		<% end %>
-						  	<% end %>
+	
 						  	
 						  	<% if current_user.has_role? :admin  %>
 								  	<li><%= link_to 'Benutzerverwaltung', users_path %></li>
@@ -49,9 +61,22 @@
                 <%= form_tag "/search/index" do %><input type="text" id="search" name="searchstring" value=" Search..." onclick=$('#search').val("")> <% end %>
             </header>
         </div>
+        <div id="abobox">
+        	
+        <% if current_user  %>
         
-
-</body>
+						  	<% if !@news_in_subscribed_themes.nil? 
+						  		@news_in_subscribed_themes.each do |s| %>
+						  			<li> <%= link_to s.title, theme_path(s.id)%> </li>
+						  			
+						  		<% end %>
+						  		<% else %>
+						  		<br>Nichts neues
+						  	<% end %>
+ 		<% end %>
+ 		</div>						  	
 <%= yield %>
+</body>
+
 
 </html>
