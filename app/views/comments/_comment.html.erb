@@ -121,7 +121,9 @@
 	<div class="userinfo">
 		<div><%= comment.user.nickname  %></div> 
 		<div><%= comment.user.location  %></div>
-		<div><%= comment.user.gender  %></div> </br>
+		<div><%= comment.user.gender  %></div> 
+		<p> erhielt <%= likes_of_user(comment) %> Likes für seine Beiträge</p>
+		</br>
 		&nbsp; <div class="likes">Schon <%= ActiveRecord::Base.connection.select_all("select count(*) as anzahl from flaggings where flaggable_id ="+((comment.id).to_s)).first['anzahl'] %> likes</div>
 	 	<% if current_user.present? %>
 			<% if current_user.has_role? :admin or current_user.has_role? :user %>

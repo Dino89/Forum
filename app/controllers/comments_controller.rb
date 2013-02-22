@@ -89,15 +89,21 @@ class CommentsController < ApplicationController
     end
   end
   
+  # sets a user's like or unlike for a comment and updates the total like amount of the comment's author 
   def like
   
     @comment = Comment.find(params[:id])
+    @comment_author = User.find(@comment.user_id)
+    @liked = @comment_author.liked 
+    
     if current_user.flagged?(@comment, :like) 
       current_user.unflag(@comment, :like)
+      @liked = @liked -1
     else current_user.flag(@comment, :like)
+      @liked = @liked +1
     end
+    @comment_author.update_attributes(:liked => @liked)
    
-    
     redirect_to(:back)
   end
 end
