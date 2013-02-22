@@ -1,7 +1,7 @@
 <div id="content">
 	<p id="notice"><%= notice %></p>
 	
-	<% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'contra' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
+	<% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'contra' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id) LIMIT 5", @theme.id])%>
 	
 	
 	<div class="discussion">
@@ -14,7 +14,7 @@
 	        </ul>
 	    </div>
 	    
-	    <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'pro' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
+	    <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'pro' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id) LIMIT 5", @theme.id])%>
 	    
 	    <div class="pro">
 	        <ul>
@@ -39,7 +39,7 @@
 			<% end %>
 	    </div>
 	    
-	    <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'neutral' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id)", @theme.id])%>
+	    <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'neutral' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id) LIMIT 5", @theme.id])%>
 	    
 	    <div class="neutral">
 	    	 <ul>

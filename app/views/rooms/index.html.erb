@@ -50,7 +50,9 @@
                <h2 style="color:white" align="center""> Derzeit die angesagtesten Themen:</h2>
                 <br>
                 <ul align="center">
-                    <% @Theme = Theme.find_by_sql(["SELECT * FROM themes ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id )DESC"])%>
+                    <% @Theme = Theme.find_by_sql(["SELECT * FROM themes ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id )DESC LIMIT 8"])
+                    #@Theme = Theme.find_by_sql(["SELECT * FROM themes where creation_date BETWEEN date(now) AND date(now,-1 week) ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id )DESC LIMIT 8"])
+                    %>
                     <%@Theme.each do |theme| %>
   					<li style="list-style: none;"> <div class="cssbutton2"><%= link_to theme.title, theme_path(theme) %></br></div> </li> 
 					<%end%>
