@@ -7,19 +7,27 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-  @users = User.create([{:name => "Gomez", :firstname => "Mario", :nickname => "SuperMario", :email => "gomez@fcb.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "München", :gender => 'männlich'},
-    {:name => "Kroos", :firstname => "Toni", :nickname => "Toni10", :email => "kroos@fcb.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "München", :gender => "männlich"},
-    {:name => "Janssen", :firstname => "Daniel", :nickname => "DJ", :email => "dj@ppp.de", :password => "12345678", :password_confirmation => "12345678", :admin => true, :location => "Münster", :gender => "männlich"},
-    {:name => "Dicke", :firstname => "Christopher", :nickname => "Krimi", :email => "krimi@pp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Münster", :gender => "männlich"},
-    {:name => "Mueller", :firstname => "Christopher", :nickname => "Dino", :email => "Dino@pp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Münster", :gender => "männlich"},
-    {:name => "Meyer", :firstname => "Heinz", :nickname => "DerDicke", :email => "heinz@ppp.de", :password => "12345678", :password_confirmation => "12345678", :admin => false, :location => "Berlin", :gender => "männlich"}])
+  @users = User.create([{:name => "Gomez", :firstname => "Mario", :nickname => "SuperMario", :email => "gomez@fcb.de", :password => "12345678", :password_confirmation => "12345678", :location => "München", :gender => 'm', :liked => 3},
+    {:name => "Kroos", :firstname => "Toni", :nickname => "Toni10", :email => "kroos@fcb.de", :password => "12345678", :password_confirmation => "12345678", :location => "München", :gender => "m", :liked => 2},
+    {:name => "Janssen", :firstname => "Daniel", :nickname => "DJ", :email => "dj@ppp.de", :password => "12345678", :password_confirmation => "12345678", :location => "Münster", :gender => "m", :liked => 1},
+    {:name => "Dicke", :firstname => "Christopher", :nickname => "Krimi", :email => "krimi@ppp.de", :password => "12345678", :password_confirmation => "12345678", :location => "Münster", :gender => "m"},
+    {:name => "Müller", :firstname => "Christopher", :nickname => "Dino", :email => "Dino@ppp.de", :password => "12345678", :password_confirmation => "12345678", :location => "Münster", :gender => "m", :liked => 1},
+    {:name => "Meyer", :firstname => "Heinz", :nickname => "DerDicke", :email => "heinz@meyer.de", :password => "12345678", :password_confirmation => "12345678", :location => "Berlin", :gender => "m"},
+    {:name => "Weier", :firstname => "Melanie", :nickname => "Blume88", :email => "blume1988@weier.de", :password => "12345678", :password_confirmation => "12345678", :location => "Düsseldorf", :gender => "w"},
+    {:name => "Benolli", :firstname => "Sara", :nickname => "rockygirl", :email => "rockygirl@web.de", :password => "12345678", :password_confirmation => "12345678", :location => "Stuttgart", :gender => "w"},
+    ])
   @users.each do |u|
     u.add_role :user
   end
   
-  admin = User.create(:name => "Admin", :firstname => "", :nickname => "Admin", :email => "admin@forum.de", :password => "12345678", :password_confirmation => "12345678", :admin => true, :location => "Münster", :gender => 'männlich')
+  admin = User.create(:name => "Admin", :firstname => "", :nickname => "Admin", :email => "admin@forum.de", :password => "12345678", :password_confirmation => "12345678", :location => "Münster", :gender => 'm')
   admin.add_role :admin
   
+  themeVisits = ThemeVisit.create([
+    {:user_id => 1, :theme_id => 4, :time => "2013-02-19 23:46:34"},
+    {:user_id => 9, :theme_id => 4, :time => "2013-02-19 23:46:34"},
+    {:user_id => 9, :theme_id => 6, :time => "2013-02-20 02:46:14"}
+  ])
   
   comments = Comment.create([{:text => "Das ist echt super!", :title => "Da gibt's Lob für", :procontra => "pro", :user_id => "3", :theme_id => "1"},
     {:text => "Das ist gar nicht super!", :title => "Kacke", :procontra => "contra", :user_id => "4", :theme_id => "1"},
@@ -54,19 +62,11 @@
    u = User.find_by_id(1).flag(Comment.find_by_id(14), :like)
    u = User.find_by_id(2).flag(Comment.find_by_id(13), :like)
    u = User.find_by_id(5).flag(Comment.find_by_id(13), :like)
-   u = User.find_by_id(7).flag(Comment.find_by_id(13), :like)
-   u = User.find_by_id(7).flag(Comment.find_by_id(14), :like)
+   u = User.find_by_id(9).flag(Comment.find_by_id(13), :like)
+   u = User.find_by_id(9).flag(Comment.find_by_id(14), :like)
    u = User.find_by_id(3).flag(Comment.find_by_id(18), :like)
     
-  rooms = Room.create([
-
-    {:title => "Politik"},
-    {:title => "Technik"},
-    {:title => "Gesellschaft"},
-    {:title => "Sport"},
-    {:title => "Musik"},
-    {:title => "Sonstige"}
-  ])
+  
 
 
   themes = Theme.create([
@@ -111,14 +111,20 @@
      :room_id => "2"}    
    ])
    
+  rooms = Room.create([
+
+    {:title => "Politik"},
+    {:title => "Technik"},
+    {:title => "Gesellschaft"},
+    {:title => "Sport"},
+    {:title => "Musik"},
+    {:title => "Sonstige"}
+  ])
+   
   subscriptions = Subscription.create([
     {:user_id => 1, :theme_id => 4},
-    {:user_id => 7, :theme_id => 4},
-    {:user_id => 7, :theme_id => 6}
+    {:user_id => 9, :theme_id => 4},
+    {:user_id => 9, :theme_id => 6}
   ])
   
-  themeVisits = ThemeVisit.create([
-    {:user_id => 1, :theme_id => 4, :time => "2013-02-19 23:46:34"},
-    {:user_id => 7, :theme_id => 4, :time => "2013-02-19 23:46:34"},
-    {:user_id => 7, :theme_id => 6, :time => "2013-02-20 02:46:14"}
-  ])
+  

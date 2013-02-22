@@ -50,7 +50,7 @@ module SubscriptionsHelper
    
    def has_subscription(user)
      @user = User.find(user.id)
-     @subscription = Subscription.where(:user_id => current_user.id)
+     @subscription = Subscription.where(:user_id => @user.id)
      if @subscription.count == 0
        return false
      else
