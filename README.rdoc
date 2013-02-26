@@ -88,4 +88,4 @@ bla..
 - treetop (1.4.12)
 - tzinfo (0.3.35)
 - uglifier (1.3.0)
--warden (1.2.1)
+- warden (1.2.1)
