@@ -19,9 +19,9 @@ bla..
 bla..
 
 == Verwendete GEMS mit Versionsnummern
-1. Hinzugefügte GEMS:
+<tt>1. Hinzugefügte GEMS:</tt>
 
-2. Standard GEMS:
+<tt>2. Standard GEMS:</tt>
 actionmailer (3.2.12, 3.2.8) 
 actionpack (3.2.12, 3.2.8) 
 activemodel (3.2.12, 3.2.9, 3.2.8) 
