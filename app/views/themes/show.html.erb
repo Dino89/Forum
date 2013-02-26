@@ -70,26 +70,31 @@
 		<% end %>
 	<% end %>
 	<hr/>
-	
-	
-	<%= render partial: "comments/comment", collection: @theme.comments %>
-	
-	
-	<div align="center">
-		<% if current_user.present? %>
+	<br>
+	<div id="subcribeandcomment">
+	<% if current_user.present? %>
 		   <% if current_user.has_role? :admin or current_user.has_role? :user %>
 			 	<% if can? :create, Comment %>
-			 		<p style="font-size: 180%"><%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%></p>
+			 		<div class="cssbutton2" style="font-size: 160%; width:400px;"><%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%></div>
 			 	<% end %>  	
 			 	<% if can? :subscribe_theme, Theme or can? :unsubscribe_theme, Theme %>
-			 		<p class="cssbutton2"> <%= toggle_subscription_button(@theme) %> </p>
+			 		<div class="cssbutton2"> <%= toggle_subscription_button(@theme) %> </div>
 			 	<% end %> 
 		   <% end %>
 		<% else %>
- 			<p style="font-size: 180%"> <%= link_to 'Neuen Kommentar erstellen', new_user_registration_path%> </p>
+ 			<div class="cssbutton2" style="font-size: 160%; width:400px;"> <%= link_to 'Kommentar erstellen', new_user_registration_path%> </div>
  			<p class="cssbutton2"> <%= link_to 'Abonnieren', new_user_registration_path%> </p>
 		<% end %>  
 	</div>
+	<br>
+	<br>
+	<br>
+	<%= render partial: "comments/comment", collection: @theme.comments %>
+	
+	
+	
+		
+	
 	
 	
 </div>
