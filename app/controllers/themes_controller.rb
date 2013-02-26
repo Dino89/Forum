@@ -62,7 +62,7 @@ class ThemesController < ApplicationController
 
     respond_to do |format|
       if @theme.save
-        format.html { redirect_to @theme, notice: 'Theme was successfully created.' }
+        format.html { redirect_to @theme, notice: 'Thema wurde erfolgreich erstellt.' }
         format.json { render json: @theme, status: :created, location: @theme }
       else
         format.html {  redirect_to :back, :alert => "Bitte alle Felder ausfüllen" }
