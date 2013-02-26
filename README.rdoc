@@ -22,10 +22,11 @@ bla..
 <tt>1. Hinzugefügte GEMS:</tt>
 
 <tt>2. Standard GEMS:</tt>
-actionmailer (3.2.12, 3.2.8) 
-actionpack (3.2.12, 3.2.8) 
-activemodel (3.2.12, 3.2.9, 3.2.8) 
-activerecord (3.2.12, 3.2.9, 3.2.8) 
+
+- actionmailer (3.2.12, 3.2.8) 
+- actionpack (3.2.12, 3.2.8) 
+- activemodel (3.2.12, 3.2.9, 3.2.8) 
+- activerecord (3.2.12, 3.2.9, 3.2.8) 
 activerecord-mysql-adapter (0.0.1) 
 activeresource (3.2.12, 3.2.8) 
 activesupport (3.2.12, 3.2.9, 3.2.8) 
