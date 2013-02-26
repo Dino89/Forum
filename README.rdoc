@@ -3,6 +3,9 @@ Dieses Webprojekt wurde als Prüfungsleistung für das Modul Webentwicklung 2 im
 
 Gruppe: "Tresignis" mit Daniel Janssen, Christopher Müller und Christopher Dicke.
 
+Projekt deployed auf heroku: link:thenextforum2.heroku.com
+
+MindMap:link:project_infos/MindMap_Diskussions-Forum.pdf
 
 
 == Beschreibung des Projektes
@@ -15,8 +18,10 @@ bla..
 
 bla..
 
-== Verwendete Gems mit Versionsnummern
+== Verwendete GEMS mit Versionsnummern
+1. Hinzugefügte GEMS:
 
+2. Standard GEMS:
 actionmailer (3.2.12, 3.2.8) 
 actionpack (3.2.12, 3.2.8) 
 activemodel (3.2.12, 3.2.9, 3.2.8) 
