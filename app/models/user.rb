@@ -30,5 +30,5 @@ class User < ActiveRecord::Base
   def assign_role_after_sign_up  
     @user = User.find_by_id(id)
       @user.add_role :user 
-end
+  end
 end

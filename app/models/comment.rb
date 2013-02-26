@@ -3,7 +3,6 @@ class Comment < ActiveRecord::Base
   
   attr_accessible :id, :procontra, :text, :theme_id, :title, :user_id, :updated_at
   belongs_to :user
-  #has_many :ratings
   belongs_to :theme
   
 
