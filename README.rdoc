@@ -10,12 +10,6 @@ MindMap: link:project_infos/MindMap_Diskussions-Forum.pdf
 Datenbankschema: link:project_infos/Datenbankschema.pdf
 
 
-== Beschreibung des Projektes
-
-bla..
-
-
-
 == Installationshinweise
 
 ### 1.) Installation von Git ###################
