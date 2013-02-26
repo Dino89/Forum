@@ -3,9 +3,9 @@ Dieses Webprojekt wurde als Prüfungsleistung für das Modul Webentwicklung 2 im
 
 Gruppe: "Tresignis" mit Daniel Janssen, Christopher Müller und Christopher Dicke.
 
-Projekt deployed auf heroku: link:thenextforum2.heroku.com
+Projekt deployed auf heroku: Book: thenextforum2.heroku.com
 
-MindMap:link:project_infos/MindMap_Diskussions-Forum.pdf
+MindMap: link:project_infos/MindMap_Diskussions-Forum.pdf
 
 
 == Beschreibung des Projektes
