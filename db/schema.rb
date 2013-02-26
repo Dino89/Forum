@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20130222140159) do
     t.string   "name"
     t.string   "firstname"
     t.string   "nickname"
+    t.boolean  "admin"
     t.string   "location"
     t.string   "gender"
     t.integer  "liked",                  :default => 0
