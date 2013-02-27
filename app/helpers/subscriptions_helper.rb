@@ -42,9 +42,9 @@ module SubscriptionsHelper
    def toggle_subscription_button(theme)
      @users_subscription = Subscription.where(:user_id => current_user.id, :theme_id => theme.id).first
      if @users_subscription.nil?
-       link_to 'Abonnieren', subscribe_theme_theme_path(theme)
+       link_to 'Abonnieren', subscribe_theme_theme_path(theme), class:"cssbutton"
      else
-       link_to 'Nicht mehr abonnieren', :controller => "themes", :action => "unsubscribe_theme", :theme_id => theme.id, :users_subscription_id => @users_subscription.id
+       link_to 'Nicht mehr abonnieren', {:controller => "themes", :action => "unsubscribe_theme", :theme_id => theme.id, :users_subscription_id => @users_subscription.id}, :class=>"cssbutton"
      end
    end
    

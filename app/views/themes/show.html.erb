@@ -7,6 +7,9 @@
 	<div class="discussion">
 	    
 	    <div class="contra">
+	    	<% if @comment.length ==0%>
+	    	Bisher noch keine negativen Kommentare
+	    	<%end%>
 	        <ul>
 	        		<%@comment.each do |comment| %>
 						<li><a href=#<%=comment.id %>> <%=comment.title %></a></li>
@@ -17,6 +20,9 @@
 	    <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'pro' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id) LIMIT 5", @theme.id])%>
 	    
 	    <div class="pro">
+	    	<% if @comment.length ==0%>
+	    	Bisher noch keine positiven Kommentare
+	    	<%end%>
 	        <ul>
 	        		<%@comment.each do |comment| %>
 						<li><a href=#<%=comment.id %>> <%=comment.title %></a></li>
@@ -30,8 +36,10 @@
 	        </h3>
 	        
 	       	 	<%= image_tag @theme.picture, :class => "discussion-image"%>
-	        <div class="discussion-discribtion">
+	        <div class="discussion-discription">
 	            <%= @theme.description%>
+	            <br /> <br />
+	             von <%=@theme.user.nickname %>
 	        </div>
 	        <% if user_signed_in? %>
 				<% if current_user.has_role? :admin  %>
@@ -44,7 +52,10 @@
 	    <% @comment = Comment.find_by_sql(["SELECT * FROM comments WHERE procontra like 'neutral' AND theme_id=? ORDER BY (SELECT COUNT(*) FROM flaggings where flaggings.id = comments.id) LIMIT 5", @theme.id])%>
 	    
 	    <div class="neutral">
-	    	 <ul>
+	    	<% if @comment.length ==0%>
+	    	Bisher noch keine neutralen Kommentare
+	    	<%end%>
+	    	 <ul>	    	 	
         		<%@comment.each do |comment| %>
 					<li><a href=#<%=comment.id %>> <%=comment.title %></a></li>
 				<%end%>
@@ -55,37 +66,22 @@
 	
 	
 	
-	<% if current_user.present? %>
-		<% if current_user.has_role? :admin  %>
-			<p>
-	 		  <b>Id:</b>
-	  			<%= @theme.id %>
-			</p>
-			<p>
-			  <b>User:</b>
-			  <%= @theme.user_id %>
-			</p>
-			<p>
-			  <b>Room:</b>
-			  <%= @theme.room_id %>
-			</p>
-		<% end %>
-	<% end %>
+	
 	<hr/>
 	<br>
 	<div id="subcribeandcomment">
 	<% if current_user.present? %>
 		   <% if current_user.has_role? :admin or current_user.has_role? :user %>
 			 	<% if can? :create, Comment %>
-			 		<div class="cssbutton2" style="font-size: 90%; "><%= link_to 'Kommentar erstellen', :controller => "comments", :action => "new", :theme => @theme.id%></div>
+			 		<%= link_to 'Kommentar erstellen', {:controller => "comments", :action => "new", :theme => @theme.id}, :class=>"cssbutton"%>
 			 	<% end %>  	
 			 	<% if can? :subscribe_theme, Theme or can? :unsubscribe_theme, Theme %>
-			 		<div class="cssbutton2" style="font-size: 90%;"> <%= toggle_subscription_button(@theme) %> </div>
+			 		 <%= toggle_subscription_button(@theme) %> 
 			 	<% end %> 
 		   <% end %>
 		<% else %>
- 			<div class="cssbutton2" style="font-size: 90%; "> <%= link_to 'Kommentar erstellen', new_user_registration_path%> </div>
- 			<div class="cssbutton2" style="font-size: 90%;"> <%= link_to 'Abonnieren', new_user_registration_path%> </div>
+ 			 <%= link_to 'Kommentar erstellen', new_user_registration_path, class:"cssbutton"%>
+ 			 <%= link_to 'Abonnieren', new_user_registration_path, class:"cssbutton"%> 
 		<% end %>  
 	</div>
 	<br>

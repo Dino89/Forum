@@ -2,7 +2,7 @@
 
 <div id="content">
 	<% if can? :create, @room %>
- 		<div class="cssbutton"> <%= link_to "Neuen Raum erstellen", new_room_path(@room) %></div>
+ 		 <%= link_to "Neuen Raum erstellen", new_room_path(@room),class:"cssbutton" %>
 	<% end %>
         <div id="roomlist">
             <ul>
