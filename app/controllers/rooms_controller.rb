@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class RoomsController < ApplicationController
   # for CanCan 
   load_and_authorize_resource
