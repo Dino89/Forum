@@ -1,8 +1,10 @@
-# endoding: UTF-8
-<div>
+
+
 		
-	<h1>Übersicht über die Nutzer</h1>
 	
+	<div id="users">
+		<h1>Übersicht über die Nutzer</h1>
+		<div id="users_box">
 	<table>
 	
 	<% @users = User.all %>
@@ -22,5 +24,6 @@
 	  </tr>
 	<% end %>
 	</table>
-
+	</div>
 </div>
+

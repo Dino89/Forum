@@ -2,7 +2,7 @@ class SearchController < ApplicationController
   
   def index
       
-      if params[:searchstring] && params[:searchstring] != "" 
+      if params[:searchstring]  && params[:searchstring].length > 1 
 
         
      # @theme = Theme.find_by_title(params[:searchstring])  

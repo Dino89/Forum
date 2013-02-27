@@ -4,12 +4,13 @@
 	
 	
 	<h3>Suchergebnisse</h3>
+	<div id="searchresults_box">
 			<h5>Gefundene Themen</h5>
 			<% if @theme %>
 			<% if @theme.length == 0%>
 			Keine Themen mit Suchwort gefunden
 			<%else%>
-			<ul class="themelist">
+			<ul>
 	       		<%@theme.each do |theme| %>
 				<li><%= link_to theme.title, theme_path(theme) %></li>
 				<%end%>
@@ -25,7 +26,7 @@
 			<%if @comment.length == 0 %>
 			Keine Kommentare mit Suchwort gefunden
 			<%else%>
-			<ul class="themelist">
+			<ul>
 	       		<%@comment.each do |comment| %>
 	       		
 				<li><pre><%= link_to comment.title, theme_path(comment.theme_id)+"#"+comment.id.to_s %> 	gefunden in:  <%= link_to comment.theme.title, theme_path(comment.theme) %></pre></li>
@@ -37,4 +38,5 @@
 			Keine Kommentare mit Suchwort gefunden
 			
 			<%end%> 	
+			</div>
 </div> 

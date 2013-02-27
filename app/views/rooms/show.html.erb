@@ -1,6 +1,6 @@
 
 <p id="notice"><%= notice %></p>
-<div id="content" style="width: 940px;">
+<div id="content">
 
 
  	 <h2 style="color: white" align="center">Willkommen im Raum <%= @room.title %> </h2> 
@@ -19,20 +19,24 @@
 
 
 
-        <div id="catlist">
+        <div id="roomlist">
             <ul>
 			   <% @rooms.each do |room| %>
 					<li> 
    	               		<%= link_to room.title, room %>
    	               
-   	               		<% if can? :edit, @room %>
-    						<%= link_to 'editieren', edit_room_path(room) %>
-    			  		<% end %>
-    			   
-    			  		<% if can? :delete, @room %>
-       				    	<%= link_to 'löschen', room, method: :delete, data: { confirm: 'Sind Sie sicher?' } %>
-        		   		<% end %>
+   	               	
 			   		</li>
+			   		
+			   			<% if can? :edit, @room %>
+    					<div style="width: 60%">	<%= link_to 'editieren', edit_room_path(room) %></div>
+    						
+    			  		<% end %>
+				
+					<% if can? :delete, @room %>
+       				    <div style="width: 60%">	<%= link_to 'löschen', room, method: :delete, data: { confirm: 'Sind Sie sicher?' } %></div>
+        		   		<% end %>
+        		
 				<% end %>
             </ul>
         </div>
