@@ -3,7 +3,7 @@ class Theme < ActiveRecord::Base
   has_many :subscriptions, :dependent => :destroy
   has_many :comments, :dependent => :destroy
   has_many :themeVisits, :dependent => :destroy
-  has_one :user
+  belongs_to :user
   belongs_to :room
   
   #validates_presence_of :description, :room_id, :title, :user_id

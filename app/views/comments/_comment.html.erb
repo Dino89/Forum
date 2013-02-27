@@ -53,11 +53,11 @@
 	 	<% if current_user.present? %>
 			<% if current_user.has_role? :admin or current_user.has_role? :user %>
 				<% if comment.user_id != current_user.id %>
-					&nbsp; &nbsp;<div class="cssbutton"> <%= toggle_like_button(comment, current_user) %> </div>
+					&nbsp; &nbsp; <%= toggle_like_button(comment, current_user) %> 
 				<% end %>
 			<% end %>
 		<% else %>
-			&nbsp; &nbsp; <div class="cssbutton"> <%= link_to 'Like', new_user_registration_path%> </div>
+			&nbsp; &nbsp;  <%= link_to 'Like', new_user_registration_path, class:"likebutton"%> 
 	  	<% end %>
 	  	</div>
 <br /><br />
