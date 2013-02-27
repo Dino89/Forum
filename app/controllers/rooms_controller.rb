@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class RoomsController < ApplicationController
   # for CanCan 
   load_and_authorize_resource
@@ -47,7 +48,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.save
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
+        format.html { redirect_to @room, notice: 'Raum wurde erstellt.' }
         format.json { render json: @room, status: :created, location: @room }
       else
         format.html { render action: "new" }
@@ -63,7 +64,7 @@ class RoomsController < ApplicationController
 
     respond_to do |format|
       if @room.update_attributes(params[:room])
-        format.html { redirect_to @room, notice: 'Room was successfully updated.' }
+        format.html { redirect_to @room, notice: 'Raum wurde erfolgreich geändert.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -68,7 +68,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to @comment, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to @comment, notice: 'Kommentar wurde erfolgreich geändert.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

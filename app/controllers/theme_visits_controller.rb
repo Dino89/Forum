@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ThemeVisitsController < ApplicationController
   
   # GET /rooms
@@ -45,7 +46,7 @@ class ThemeVisitsController < ApplicationController
 
     respond_to do |format|
       if @themeVisit.save
-        format.html { redirect_to @themeVisit, notice: 'themeVisit was successfully created.' }
+        format.html { redirect_to @themeVisit, notice: 'Thema erfolgreich erstellt.' }
         format.json { render json: @themeVisit, status: :created, location: @themeVisit }
       else
         format.html { render action: "new" }
@@ -61,7 +62,7 @@ class ThemeVisitsController < ApplicationController
 
     respond_to do |format|
       if @themeVisit.update_attributes(params[:themeVisit])
-        format.html { redirect_to @themeVisit, notice: 'themeVisit was successfully updated.' }
+        format.html { redirect_to @themeVisit, notice: 'Thema erfolgreich geändert.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

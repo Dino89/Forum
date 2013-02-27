@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class SubscriptionsController < ApplicationController
   # for CanCan 
   load_and_authorize_resource
@@ -47,7 +48,7 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.save
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully created.' }
+        format.html { redirect_to @subscription, notice: 'Beschreibung erfolgreich erstellt.' }
         format.json { render json: @subscription, status: :created, location: @subscription }
       else
         format.html { render action: "new" }
@@ -63,7 +64,7 @@ class SubscriptionsController < ApplicationController
 
     respond_to do |format|
       if @subscription.update_attributes(params[:subscription])
-        format.html { redirect_to @subscription, notice: 'Subscription was successfully updated.' }
+        format.html { redirect_to @subscription, notice: 'Beschreibung erfolgreich geändert.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
