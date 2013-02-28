@@ -20,7 +20,7 @@
     u.add_role :user
   end
   
-  admin = User.create(:name => "Admin", :firstname => "", :nickname => "Admin", :email => "admin@forum.de", :password => "12345678", :password_confirmation => "12345678", :location => "Münster", :gender => 'm')
+  admin = User.create(:name => "Admin", :firstname => "", :nickname => "Admin", :email => "admin@forum.de", :password => "qwertzu123", :password_confirmation => "qwertzu123", :location => "Münster", :gender => 'm')
   admin.add_role :admin
   
   themeVisits = ThemeVisit.create([
@@ -52,9 +52,17 @@
                auf diesem Planeten! Zum Glück hat mein Siemens C35i mich bisher nicht im Stich gelassen. Das wird so schnell auch n icht passieren, schließlich steckt in 
                diesem Qualitätsprodukt Ingenieurskunst. Wischt ihr ruhig weiter wie bekloppt auf eueren neumodischen Dingern herum. Mein Vorschlag für die nächste 
                bahnbrechende Innovation: Ausfahrbare Scheibenwischer fürs Handy! Geht auch garantiert nicht kaputt... ", 
-               :title => "Ihr seid doch von allen guten Geistern dieser eigentlich wunderbaren Erde verlassen! Was soll man mit so einem mit Technik vollgestopften Teil ???????????????????????????????", 
+               :title => "Ihr seid doch von allen guten Geistern dieser eigentlich wunderbaren Erde verlassen! Was soll man mit so einem mit Technik vollgestopften Teil?", 
                :procontra => "contra", :user_id => "6", :theme_id => "6"},
+    {:text => "CeBit wird sicher interessant sein unter dem obigen Thema!", :title => "Ich bin dieses Jahr auch dort.", :procontra => "neutral", :user_id => "5", :theme_id => "9"},
+    {:text => "Die Messe hat sehr stark nachgelassen! Eintrittspreise um 35 Euro??? Wer bitte gibt das für einen Messetag aus!? Schade CeBit!", :title => "Was soll ich auf der CeBit?", :procontra => "contra", :user_id => "3", :theme_id => "9"},
+    {:text => "Ich war letztes Jahr dort und muss sagen, es hat sich überhaubt nicht gelohnt und daführ habe ich auch noch 35 Euro ausgegeben. Dieses Jahr wird die Messe ohne mich stattfinden...", :title => "Ich nicht mehr!", :procontra => "contra", :user_id => "6", :theme_id => "9"},
+    {:text => "CeBit ist jedes Jahr immer wieder sein Geld Wert! Und mal unter uns, ich habe noch nie Eintritt bezahlt! Es gibt genügend Möglichkeiten an Karten zu kommen!", :title => "Wo liegt Euer Problem?", :procontra => "pro", :user_id => "7", :theme_id => "9"},
+    {:text => "Auch in diesem Jahr gibt es wieder eine Menge Gutscheincodes auf unterschiedlichen Seiten... Also Freunde, Augen auf ;)", :title => "Freikarten", :procontra => "pro", :user_id => "2", :theme_id => "9"},
     {:text => "Aber das Nexus ist definitiv n Knaller, WENN es denn lieferbar wäre. Egal, Hauptsache Android!", :title => "Ich hab schon n HTC.", :procontra => "neutral", :user_id => "5", :theme_id => "6"},
+    {:text => "Silbermond macht nach wie vor sehr gute Musik", :title => "Coole Band!", :procontra => "pro", :user_id => "5", :theme_id => "7"},
+    {:text => "Wir haben auch vor 3 Jahren einen bei uns in den Garten gepflanzt. Nun gibt es jedes Jahr frischen Apfelsaft ;)", :title => "Apfelbäume sind sehr schön!", :procontra => "pro", :user_id => "3", :theme_id => "8"},
+    {:text => " Oktober/November ist Pflanzzeit für den Apfelbaum und andere Obstgehölze. Da der Apfelbaum (Malus domestica), abgesehen von den diversen Sorteneigenschaften, Besonderheiten bei der Befruchtung und unterschiedlicher Krankheitsanfälligkeit auch von höchst unterschiedlichem Wuchs (Riesen-Apfelbaum, mittlere, kleine Apfelbaum-Spindeln für Kübelhaltung auf Balkon, hängt von der Wüchsigkeit der Unterlage ab. Der Apfelbaum ist veredelt.) sein kann, sollte man sich m.E. besser bei der Auswahl beraten lassen, damit nichts schief geht. Schließlich soll das gute Stück ja möglichst jahrzehntelang halten und leckere Äpfel abwerfen. Und die sind extrem lecker und gesund, wenn sie ganz frisch vom Baum kommen.)", :title => "Pflanzzeit..", :procontra => "neutral", :user_id => "4", :theme_id => "8"},
     {:text => " Recht hast du, Dino! Aber ich Nexus ist das einzig wahre, unverbasteltes Android. Ich bekomme mit einem Nexus immer sofort neue Updates, während andere hoffen müssen, OB und wenn ja, WANN sie Updates bekommen. ", :title => "Hauptsache Android", :procontra => "pro", :user_id => "3", :theme_id => "6"},
     ])
     
@@ -108,7 +116,25 @@
      :picture => "https://lh6.ggpht.com/TWF21RygkFpkU-vKhdAxub1mF6L9xxoqc7aD1F6tD8ElCQFES4Ljn3yuUqcM1iZxC5A=w346",
      :description => "Google hat ein eigenes Smartphone rausgebracht für nur 349 bzw 300 Euro ist es hinsichtlich verbaute Komponenten doch sehr guenstig erscheint was meint ihr ?",
      :user_id => "1",
-     :room_id => "2"}    
+     :room_id => "2"},   
+    
+    {:title => "Silbermond immer noch TOP??? oder doch FLOP???",
+     :picture => "http://www.deutscher-radiopreis.de/presse/bilder/silbermond611.jpg",
+     :description => "Wie hat sich die Band Silbermond Eurer Meinung nach entwickelt in den letzten Jahren?",
+     :user_id => "6",
+     :room_id => "5"},  
+    
+    {:title => "Wann ist die Beste Zeit einen Apfelbaum zu pflanzen?",
+     :picture => "http://www.schmid-gartenpflanzen.de/forum/index.php/fa/1557/0/",
+     :description => "Tja, gerne möchte ich unseren Garten mit einem Apfelbaum bereichern. Nur wann und wie pflanzt man so einen Baum?",
+     :user_id => "8",
+     :room_id => "6"},  
+     
+    {:title => "CeBit 2013",
+     :picture => "http://www.pcgames.de/screenshots/667x375/2009/03/cebit_98457u9_aufmacher.jpg",
+     :description => "Die Veranstalter der weltweit größten IT-Messe Cebit haben das Schirmthema für das kommende Jahr bekannt gegeben. So soll unter dem Titel Shareconomy der Fokus auf dem Teilen von Wissen und Ressourcen im digitalen Zeitalter liegen. Was sagt Ihr zu dem Thema?",
+     :user_id => "2",
+     :room_id => "2"}   
    ])
    
   rooms = Room.create([
