@@ -2,12 +2,12 @@ require "spec_helper"
 
 describe User do
   
-  valid_user = FactoryGirl.create(:user)
+  valid_user = FactoryGirl.build(:user)
   
   it "should be a valid user" do
     valid_user.should be_valid
   end
-  
+  valid_user.save
   
   # validations
   it "should require a email" do

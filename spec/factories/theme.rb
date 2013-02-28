@@ -1,19 +1,10 @@
 FactoryGirl.define do
   factory :theme do
-   description "Davon bin ich felsenfest ueberzeugt! Bayern wird's!" 
-   picture "http://2.bp.blogspot.com/_FNaCWBoXaAs/S-Px6zFF8vI/AAAAAAAABfg/tUUJzC1IHD4/s1600/fc_bayern.jpg"
-   title "Bayern deutscher Meister ?!"
-   #comments { [FactoryGirl.build(:comment)] }
-   #subscriptions { [FactoryGirl.build(:subscription)] }
-   #themes { [FactoryGirl.build(:theme)] }
-   #themeVisit { [FactoryGirl.build(:themeVisit)]}
-   #user { [FactoryGirl.build(:user)]}
-   #room { [FactoryGirl.build(:room)]}
+   id "100"
+   description "Eine coole Rockband, die anfangs harten Rock zeigte und nun Rock, aber auch Rock-Pop Lieder macht. Sehr vielseitig!" 
+   picture "http://nickelback.com/"
+   title "Nickelback sind die geilsten"
+   user_id "1"
+   room_id "5"
  end
 end
-
-#FactoryGirl.define do
- # factory :theme do
-  #  sequence(:theme) {|t| "My theme #{t}" }
-  #end
-#end
