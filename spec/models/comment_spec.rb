@@ -3,15 +3,27 @@ require "spec_helper"
 describe Comment do
   
   # test data
-   let!(:comment) { FactoryGirl.build(:comment) }
+   valid_comment = FactoryGirl.build(:comment)
+   
+   it "shuold be a valid comment" do
+     valid_comment.should be_valid
+   end
+   valid_comment.save
+   
   # validations
   it "should require a title" do
-    Comment.create(:title => "").should_not be_valid
+    Comment.create(
+       :text => "Das juckt mich nicht! Schaut euch doch an, was fuer einen krassen Gewinn die machen. Die beuten doch alle aus!",
+       :procontra => "contra",
+       :user_id => "1",
+       :theme_id => "2").should_not be_valid
   end
+  
   it "should require a text" do
-    Comment.create(:text => "").should_not be_valid
-  end
-  it "should not be valid with identifical titles" do
-    Comment.create(:title => "Das ist doof").should_not be_valid
+    Comment.create(
+       :title => "Ausbeuter!!!",
+       :procontra => "contra",
+       :user_id => "1",
+       :theme_id => "2").should_not be_valid
   end
 end

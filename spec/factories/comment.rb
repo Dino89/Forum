@@ -1,7 +1,10 @@
 FactoryGirl.define do
   factory :comment do
-    title "Das ist doof"
-    text "Da bin ich ganz anderer Meinung, was soll das?"
-    procontra "contra"
+    id "100"
+    title "Apple ist Apple"
+    text "Eine etablierte Marke, die ihre Existenzberechtigung hat! Egal, was andere sagen."
+    procontra "pro"
+    user_id "1"
+    theme_id "2"
   end
 end

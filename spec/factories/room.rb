@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :room do
-   title "Technik"
+    id "100"
+   title "Religion"
   end
 
   #factory :room do
