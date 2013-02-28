@@ -29,9 +29,11 @@
     {:user_id => 9, :theme_id => 6, :time => "2013-02-20 02:46:14"}
   ])
   
-  comments = Comment.create([{:text => "Das ist echt super!", :title => "Da gibt's Lob für", :procontra => "pro", :user_id => "3", :theme_id => "1"},
-    {:text => "Das ist gar nicht super!", :title => "Kacke", :procontra => "contra", :user_id => "4", :theme_id => "1"},
-    {:text => "Ein guter Anfang, jedoch gibt es noch Verbesserungspotential", :title => "Naja", :procontra => "neutral", :user_id => "5", :theme_id => "1"},
+  comments = Comment.create([{:text => "Apple hat 2 Produktkategorien komplett neu erfunden. Nämlich Smartphones und Tablets. Microsoft hat es schon mal früher mit Tablets versucht und ist gescheitert. Apple gehört für mich zu den Vorreitern in Sachen Innovation ", :title => "Innovationen ? klar!", :procontra => "pro", :user_id => "3", :theme_id => "1"},
+    {:text => "Man muss doch nur mal auf das technische Datenblatt gucken um zu sehen das Apple seine Kunden hart abzockt. Einen Rechner mit dem selben Zeug drin gibts bei Dell meistens schon für die Hälfte", :title => "Preisleistung ?", :procontra => "contra", :user_id => "4", :theme_id => "1"},
+    {:text => "Ich habe ein Iphone 3G das gute Stück ist ca. 3 Jahre alt und ich kriege absolut keine Apps mehr dafür im Appstore. Apples Innovationspolitik kürzt einfach zu sehr die Supportzeit.", :title => "Apples Firmenpolitik", :procontra => "contra", :user_id => "6", :theme_id => "1"},
+    {:text => "Man drücke allein mal auf dem Deckel eines Dell Notebooks rum. Da hab ich schon das Gefühl, dass das Ding gleich kaputt geht. Apple Sachen sind alle solide gebaut. Die Iphones die Macbooks werden aus einem Unibody Gehäuse aus Aluminium gefräst und nicht aus Plastik.", :title => "Wertigste Verarbeitung die ich kenne", :procontra => "pro", :user_id => "2", :theme_id => "1"},
+    {:text => "Man zahlt halt für wertige Produkte die gut verarbeitet sind. Den Hype um das alles finde ich aber übertrieben", :title => "Naja", :procontra => "neutral", :user_id => "5", :theme_id => "1"},
     {:text => "Da bin ich ganz sicher. Sie sind topmotiviert und haben starke Leute auf der Bank.", :title => "Bayern wird Meister", :procontra => "pro", :user_id => "3", :theme_id => "4"},
     {:text => "BVB wird wieder die Schale holen.", :title => "So ein Bloedsinn", :procontra => "contra", :user_id => "4", :theme_id => "4"},
     {:text => "Wir sind dieses Jahr dran! Jawohl! Ein Leben lang Schalke!", :title => "Schalke wird's!", :procontra => "contra", :user_id => "5", :theme_id => "4"},
@@ -41,10 +43,10 @@
     {:text => "Mir ist es total egal, wer Kanzler wird. Die machen eh, was die wollen.", :title => "Wen kümmert's?", :procontra => "contra", :user_id => "4", :theme_id => "0"},
     {:text => "Ihr Zecken? Niemals!", :title => "Haha", :procontra => "contra", :user_id => "5", :theme_id => "5"},
     {:text => "Ihr habt ja schon seit Jahrzehnten noch nicht mal die Meisterschaft geholt, also würd ich mal ganz ruhig sein!", :title => "Schalke hat eh nix zu melden", :procontra => "neutral", :user_id => "3", :theme_id => "5"},
-    {:text => "Ist sofort gekauft! Wie geil ist das denn?!", :title => "JAAAAAAAA", :procontra => "pro", :user_id => "1", :theme_id => "6"},
+    {:text => "Ist sofort gekauft! Wie geil ist das denn?! Auf dem Markt gibt es für den Preis sonst nirgendswo eine vergleichbare Aussattung", :title => "300€ ? wie geil!", :procontra => "pro", :user_id => "1", :theme_id => "6"},
     {:text => "Ich hab schon das Galaxy Nexus und es einfach genial!", :title => "Nexus 4ever", :procontra => "pro", :user_id => "2", :theme_id => "6"},
     {:text => "Aber scheint ein sehr gutes Angebot zu sein.", :title => "Ich hab schon das S3.", :procontra => "neutral", :user_id => "3", :theme_id => "6"},
-    {:text => "Wenn interessiert denn Android?! Das Nexus kann gegen das iPhone einpacken.", :title => "Ich lieb mein iPhone", :procontra => "contra", :user_id => "4", :theme_id => "6"},
+    {:text => "Wenn interessiert denn Android?! Das Nexus kann gegen das iPhone einpacken. Wer unbedingt ein offenes System haben will bitte die Virenprogrammierer sind schon am werkeln. Android wird das neue Windows !", :title => "Ich lieb mein iPhone", :procontra => "contra", :user_id => "4", :theme_id => "6"},
     {:text => "Was soll eigentlich dieser Quatsch? Ich kann es einfach nicht glauben, überall laufen Leute herum, die mit ihrem Finger auf ihrem Handy hin und her wischen, 
                als ob ihr Display beschlagen würde! Das hat man davon, wenn unbedingt eine Glasschicht die Vorderseite verunstalten muss! Da kann ich ja gleich ein Paket 
                Brillenputztücher mit mir herum schleppen. Mir stinkt es, jeden Tag Tag mehrmals mein Brillengläser reinigen zu müssen! Und dann noch das Handy putzen?! 
@@ -61,9 +63,12 @@
     {:text => "Auch in diesem Jahr gibt es wieder eine Menge Gutscheincodes auf unterschiedlichen Seiten... Also Freunde, Augen auf ;)", :title => "Freikarten", :procontra => "pro", :user_id => "2", :theme_id => "9"},
     {:text => "Aber das Nexus ist definitiv n Knaller, WENN es denn lieferbar wäre. Egal, Hauptsache Android!", :title => "Ich hab schon n HTC.", :procontra => "neutral", :user_id => "5", :theme_id => "6"},
     {:text => "Silbermond macht nach wie vor sehr gute Musik", :title => "Coole Band!", :procontra => "pro", :user_id => "5", :theme_id => "7"},
+    {:text => "Ich finde mit dem letzten Album haben Silbermond einfach ihre Fans verraten. Das was da drin ist ist einfach nicht mehr Silbermond", :title => "Letztes Album", :procontra => "pro", :user_id => "3", :theme_id => "7"},
     {:text => "Wir haben auch vor 3 Jahren einen bei uns in den Garten gepflanzt. Nun gibt es jedes Jahr frischen Apfelsaft ;)", :title => "Apfelbäume sind sehr schön!", :procontra => "pro", :user_id => "3", :theme_id => "8"},
+    {:text => "Anfang Winter ist die idealste Zeit", :title => "Anfang Winter", :procontra => "pro", :user_id => "3", :theme_id => "8"},
+    {:text => "Bei einem harten Winter gehen die allerdings schnell ein. Ich bevorzuge anfang Frühling", :title => "harter Winter", :procontra => "contra", :user_id => "2", :theme_id => "8"},
     {:text => " Oktober/November ist Pflanzzeit für den Apfelbaum und andere Obstgehölze. Da der Apfelbaum (Malus domestica), abgesehen von den diversen Sorteneigenschaften, Besonderheiten bei der Befruchtung und unterschiedlicher Krankheitsanfälligkeit auch von höchst unterschiedlichem Wuchs (Riesen-Apfelbaum, mittlere, kleine Apfelbaum-Spindeln für Kübelhaltung auf Balkon, hängt von der Wüchsigkeit der Unterlage ab. Der Apfelbaum ist veredelt.) sein kann, sollte man sich m.E. besser bei der Auswahl beraten lassen, damit nichts schief geht. Schließlich soll das gute Stück ja möglichst jahrzehntelang halten und leckere Äpfel abwerfen. Und die sind extrem lecker und gesund, wenn sie ganz frisch vom Baum kommen.)", :title => "Pflanzzeit..", :procontra => "neutral", :user_id => "4", :theme_id => "8"},
-    {:text => " Recht hast du, Dino! Aber ich Nexus ist das einzig wahre, unverbasteltes Android. Ich bekomme mit einem Nexus immer sofort neue Updates, während andere hoffen müssen, OB und wenn ja, WANN sie Updates bekommen. ", :title => "Hauptsache Android", :procontra => "pro", :user_id => "3", :theme_id => "6"},
+    {:text => " Recht hast du, Dino! Aber ich Nexus ist das einzig wahre, unverbasteltes Android. Ich bekomme mit einem Nexus immer sofort neue Updates, während andere hoffen müssen, OB und wenn ja, WANN sie Updates bekommen. ", :title => "Hauptsache pures Android", :procontra => "pro", :user_id => "3", :theme_id => "6"},
     ])
     
    u = User.find_by_id(1).flag(Comment.find_by_id(4), :like)
@@ -79,9 +84,9 @@
 
   themes = Theme.create([
   
-    {:title => "Apple",
-     :picture => "http://brennpunkterde.de/wp-content/uploads/2012/07/apple_logo2.jpg",
-     :description => "Apple macht innovative vom Design her ansprechende Technik. Der Firmensitz ist in Californien",
+    {:title => "Apple, ein fauler Apfel ?",
+     :picture => "http://www.maclife.de/files/data/editors/2007_02/img3585.jpg",
+     :description => "Bringt Apple wirklich Innovationen und gute Technik oder trügt der Konzern mit einem Hype um seine Produkte ?",
      :user_id => "1",
      :room_id => "2"},
     
@@ -124,8 +129,8 @@
      :user_id => "6",
      :room_id => "5"},  
     
-    {:title => "Wann ist die Beste Zeit einen Apfelbaum zu pflanzen?",
-     :picture => "http://www.schmid-gartenpflanzen.de/forum/index.php/fa/1557/0/",
+    {:title => "Sollte ich im Winter meinen Apfelbaum pflanzen ?",
+     :picture => "http://www.allmystery.de/i/tBpFnIR_apfelbaum.jpg?bc",
      :description => "Tja, gerne möchte ich unseren Garten mit einem Apfelbaum bereichern. Nur wann und wie pflanzt man so einen Baum?",
      :user_id => "8",
      :room_id => "6"},  
