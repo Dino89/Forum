@@ -1,4 +1,37 @@
-
+<script>
+		$(function(){
+			$('#slides').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function(current){
+					$('.caption').animate({
+						bottom:-35
+					},100);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+				animationComplete: function(current){
+					$('.caption').animate({
+						bottom:0
+					},200);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function() {
+					$('.caption').animate({
+						bottom:0
+					},200);
+				}
+			});
+		});
+        </script>
 
 <div id="content">
 	<% if can? :create, @room %>
@@ -29,7 +62,30 @@
                <div class="newest_themes">
                <h2 style="color:white" align="center""> Derzeit die angesagtesten Themen:</h2>
                 <br>
+                
+                
+                <div id="slides" align="center">
+                <div class="slides_container" >
+                	<% @Theme = Theme.find_by_sql(["SELECT * FROM themes ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id )DESC LIMIT 8"])
+                    #@Theme = Theme.find_by_sql(["SELECT * FROM themes where creation_date BETWEEN current_date AND date current_date - integer '7' ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id )DESC LIMIT 8"])
+                    %>
+                    <%@Theme.each do |theme| %>
+                        <div class="slide">
+                            <%= link_to (image_tag theme.picture,:class=>"slidepicture", :target=>"_blank" ),theme_path(theme)%>
+                                <div class="caption" style="bottom:0">
+                                    <h4> <%=theme.title %></h4>
+                                        <p><%=theme.description %></p>
+                                </div>
+                        </div>
+                        
+                
+                <%end %>
+                </div>
+            </div>
                 <ul align="center">
+                	
+                	
+                	
                     <% @Theme = Theme.find_by_sql(["SELECT * FROM themes ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id )DESC LIMIT 8"])
                     #@Theme = Theme.find_by_sql(["SELECT * FROM themes where creation_date BETWEEN current_date AND date current_date - integer '7' ORDER BY (SELECT COUNT(*) FROM comments where themes.id = comments.theme_id )DESC LIMIT 8"])
                     %>
