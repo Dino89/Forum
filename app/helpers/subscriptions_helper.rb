@@ -11,18 +11,16 @@ module SubscriptionsHelper
          # find last comment of subscribed theme and the visit's time for this theme
          # visit's time for this theme is compared to the time of the last comment in this theme
          @subscribed_themes.each do |st|
-            # @last_comment_of_subscribed_theme = Comment.find( :last, :joins => "INNER JOIN themes ON comments.theme_id = themes.id", :conditions => ["themes.id = ?", st.id])
-            @time_of_last_comment_of_s_th = Comment.find_by_sql(["SELECT c.updated_at, c.user_id FROM comments as c INNER JOIN themes as t ON c.theme_id = t.id order by c.updated_at desc LIMIT 1"])
+            @query = "SELECT c.updated_at, c.user_id, c.theme_id FROM comments as c 
+              INNER JOIN themes as t ON c.theme_id = t.id 
+              WHERE c.theme_id = "+st.id.to_s+"
+              order by c.updated_at desc LIMIT 1"
+            @time_of_last_comment_of_s_th = Comment.find_by_sql([@query])
             
-            # user created last comment, so he has seen the latest comments of his subscribed theme
-            if @time_of_last_comment_of_s_th[0].user_id == current_user.id 
-              return @changed_subscribed_themes
-            end
-          
-            @time_of_last_comment_of_s_th = @time_of_last_comment_of_s_th[0].updated_at
+            
             @themeVisit = ThemeVisit.where(:user_id => @user.id, :theme_id => st.id).first
             if !@themeVisit.nil?
-              if @themeVisit.time <= @time_of_last_comment_of_s_th
+              if @themeVisit.time <= @time_of_last_comment_of_s_th[0].updated_at
                  @changed_subscribed_themes << st
               end
             end
