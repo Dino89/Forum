@@ -9,6 +9,20 @@ MindMap: link:project_infos/MindMap_Diskussions-Forum.pdf
 
 Datenbankschema: link:project_infos/Datenbankschema.pdf
 
+== Daten um sich im Forum anzumelden
+1. Als Admin:
+
+- Email: admin@forum.de
+- Password: qwertzu123
+
+2. Als User:
+
+Ein möglicher User:
+- Email: gomez@fcb.de
+- Password: 12345678
+
+Natürlich können beliebig viele User neu registriert werden.
+
 
 == Installationshinweise
 
